@@ -9,22 +9,31 @@
     />
     <meta name="theme-color" content="#0d0e15" />
     <title>Contacto | Ivan Baguena</title>
+    <script src="../js/theme.js"></script>
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/navbar.css" />
     <link rel="stylesheet" href="../css/projectCards.css" />
     <link rel="stylesheet" href="../css/carousel.css" />
   </head>
   <body>
+    <canvas class="background-network" data-network aria-hidden="true"></canvas>
     <header class="site-header">
       <nav class="mainNav" aria-label="Navegación principal">
         <a class="brand-mark" href="../index.html#inicio" aria-label="Ivan Baguena, inicio">
           IB<span>.</span>
         </a>
-        <div class="nav-links">
-          <a href="../index.html#inicio">Inicio</a>
-          <a href="../index.html#sobre-mi">Sobre mí</a>
-          <a href="../index.html#proyectos">Proyectos</a>
-          <a class="nav-contact" href="../index.html#contacto">Contacto</a>
+        <div class="header-tools">
+          <div class="nav-links">
+            <a href="../index.html#inicio">Inicio</a>
+            <a href="../index.html#sobre-mi">Sobre mí</a>
+            <a href="../index.html#enfoque">Stack</a>
+            <a href="../index.html#proyectos">Proyectos</a>
+            <a class="nav-contact" href="../index.html#contacto">Contacto</a>
+          </div>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Cambiar a modo claro" title="Cambiar a modo claro">
+            <span data-theme-icon aria-hidden="true">☼</span>
+            <span data-theme-label>Claro</span>
+          </button>
         </div>
       </nav>
     </header>
@@ -109,6 +118,7 @@
         <a href="mailto:baguena.delabandera.ivan@gmail.com">Email</a>
       </div>
     </footer>
+    <script src="../js/background.js" defer></script>
     <script src="../js/script.js" defer></script>
   </body>
 </html>

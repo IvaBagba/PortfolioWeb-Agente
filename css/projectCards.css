@@ -4,7 +4,7 @@
 }
 
 .project-tile {
-  background: linear-gradient(155deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.012));
+  background: linear-gradient(155deg, var(--card-background), var(--surface-color));
   border: 1px solid var(--line-color);
   border-radius: 6px;
   display: flex;
@@ -30,7 +30,7 @@
 
 .project-tile-top {
   align-items: center;
-  color: var(--gta-orange);
+  color: var(--accent-strong);
   display: flex;
   font-size: 0.69rem;
   font-weight: 650;
@@ -73,10 +73,10 @@
 }
 
 .project_tags span {
-  background: rgba(255, 42, 122, 0.08);
-  border: 1px solid rgba(255, 42, 122, 0.19);
+  background: var(--tag-background);
+  border: 1px solid var(--tag-border);
   border-radius: 3px;
-  color: #ffb0cc;
+  color: var(--tag-color);
   font-size: 0.66rem;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -97,6 +97,43 @@
 
 .project-tile:focus-within .project-card-link:focus-visible {
   outline: none;
+}
+
+.page-project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  margin: 3rem 0 1rem;
+}
+
+.page-project-grid .project-tile {
+  flex: initial;
+  min-height: 290px;
+}
+
+.page-project-grid .project_kicker {
+  color: var(--accent-strong);
+  font-size: 0.69rem;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.page-project-grid .project-tile h2 {
+  font-size: 1.55rem;
+  letter-spacing: -0.035em;
+  margin: 2.2rem 0 0.7rem;
+}
+
+.page-project-grid .project-tile > a:not(.project-card-link) {
+  color: var(--accent-strong);
+  font-size: 0.86rem;
+  font-weight: 650;
+  margin-top: 1.2rem;
+  text-decoration: none;
+}
+
+.page-project-grid .project-tile > a:not(.project-card-link):hover {
+  color: var(--gta-pink);
 }
 
 @media (max-width: 600px) {

@@ -9,6 +9,7 @@
     />
     <meta name="theme-color" content="#0d0e15" />
     <title>Ivan Baguena | Desarrollador backend</title>
+    <script src="js/theme.js"></script>
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="css/projectCards.css" />
@@ -22,14 +23,22 @@
     />
   </head>
   <body>
+    <canvas class="background-network" data-network aria-hidden="true"></canvas>
     <header class="site-header">
       <nav class="mainNav" aria-label="Navegación principal">
         <a class="brand-mark" href="#inicio" aria-label="Ivan Baguena, inicio">IB<span>.</span></a>
-        <div class="nav-links">
-          <a href="#inicio" aria-current="location">Inicio</a>
-          <a href="#sobre-mi">Sobre mí</a>
-          <a href="#proyectos">Proyectos</a>
-          <a class="nav-contact" href="#contacto">Contacto</a>
+        <div class="header-tools">
+          <div class="nav-links">
+            <a href="#inicio" aria-current="location">Inicio</a>
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#enfoque">Stack</a>
+            <a href="#proyectos">Proyectos</a>
+            <a class="nav-contact" href="#contacto">Contacto</a>
+          </div>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Cambiar a modo claro" title="Cambiar a modo claro">
+            <span data-theme-icon aria-hidden="true">☼</span>
+            <span data-theme-label>Claro</span>
+          </button>
         </div>
       </nav>
     </header>
@@ -100,12 +109,11 @@
         <div class="section-inner" data-reveal>
           <div class="section-heading">
             <div>
-              <p class="eyebrow">Mi enfoque</p>
-              <h2 id="expertise-title">De la idea al producto.</h2>
+              <p class="eyebrow">Tecnologías y plataformas</p>
+              <h2 id="expertise-title">Dónde desarrollo.</h2>
             </div>
             <p class="section-note">
-              Una base versátil para construir experiencias útiles en distintas
-              plataformas.
+              Lenguajes, herramientas y entornos presentes en mis proyectos.
             </p>
           </div>
           <div class="carousel" data-carousel>
@@ -114,31 +122,68 @@
                 <article class="expertise-card">
                   <span class="expertise-number">01</span>
                   <i class="fas fa-server" aria-hidden="true"></i>
-                  <h3>Backend</h3>
-                  <p>Servicios y lógica de aplicación con foco en claridad y fiabilidad.</p>
+                  <h3>Backend y APIs</h3>
+                  <p>Servicios desarrollados en Java para proyectos de backend.</p>
+                  <div class="expertise-tags" aria-label="Tecnologías">
+                    <span>Java</span>
+                    <span>Spring Boot</span>
+                  </div>
                 </article>
                 <article class="expertise-card">
                   <span class="expertise-number">02</span>
-                  <i class="fas fa-laptop-code" aria-hidden="true"></i>
-                  <h3>Desarrollo web</h3>
-                  <p>Interfaces cuidadas, accesibles y adaptables a cada pantalla.</p>
+                  <i class="fas fa-layer-group" aria-hidden="true"></i>
+                  <h3>Kotlin Multiplatform</h3>
+                  <p>Una base compartida para llevar aplicaciones a varias plataformas.</p>
+                  <div class="expertise-tags" aria-label="Tecnologías">
+                    <span>Kotlin</span>
+                    <span>Compose</span>
+                  </div>
                 </article>
                 <article class="expertise-card">
                   <span class="expertise-number">03</span>
                   <i class="fas fa-mobile-alt" aria-hidden="true"></i>
-                  <h3>Multiplataforma</h3>
-                  <p>Aplicaciones que llevan una misma idea a más dispositivos.</p>
+                  <h3>Android e iOS</h3>
+                  <p>Aplicaciones móviles creadas con Compose Multiplatform.</p>
+                  <div class="expertise-tags" aria-label="Plataformas">
+                    <span>Android</span>
+                    <span>iOS</span>
+                  </div>
+                </article>
+                <article class="expertise-card">
+                  <span class="expertise-number">04</span>
+                  <i class="fas fa-globe" aria-hidden="true"></i>
+                  <h3>Web</h3>
+                  <p>Desarrollo de interfaces web y experiencias multiplataforma.</p>
+                  <div class="expertise-tags" aria-label="Tecnologías">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>Web</span>
+                  </div>
+                </article>
+                <article class="expertise-card">
+                  <span class="expertise-number">05</span>
+                  <i class="fas fa-desktop" aria-hidden="true"></i>
+                  <h3>Escritorio</h3>
+                  <p>Aplicaciones Compose Multiplatform para escritorio JVM.</p>
+                  <div class="expertise-tags" aria-label="Plataformas">
+                    <span>Desktop</span>
+                    <span>JVM</span>
+                  </div>
                 </article>
               </div>
             </div>
+            <div class="carousel-progress" aria-hidden="true"><span></span></div>
             <div class="carousel-controls">
-              <p class="carousel-status" data-carousel-status aria-live="polite"></p>
+              <p class="carousel-status" data-carousel-status aria-live="off"></p>
               <div class="carousel-buttons">
-                <button class="carousel-button" type="button" data-carousel-prev aria-label="Área anterior" disabled>
+                <button class="carousel-button" type="button" data-carousel-prev aria-label="Área anterior">
                   <span aria-hidden="true">←</span>
                 </button>
                 <button class="carousel-button" type="button" data-carousel-next aria-label="Área siguiente">
                   <span aria-hidden="true">→</span>
+                </button>
+                <button class="carousel-button carousel-play" type="button" data-carousel-toggle aria-label="Pausar carrusel" title="Pausar carrusel">
+                  <span data-carousel-toggle-icon aria-hidden="true">Ⅱ</span>
                 </button>
               </div>
             </div>
@@ -228,14 +273,18 @@
                 </article>
               </div>
             </div>
+            <div class="carousel-progress" aria-hidden="true"><span></span></div>
             <div class="carousel-controls">
-              <p class="carousel-status" data-carousel-status aria-live="polite"></p>
+              <p class="carousel-status" data-carousel-status aria-live="off"></p>
               <div class="carousel-buttons">
-                <button class="carousel-button" type="button" data-carousel-prev aria-label="Proyecto anterior" disabled>
+                <button class="carousel-button" type="button" data-carousel-prev aria-label="Proyecto anterior">
                   <span aria-hidden="true">←</span>
                 </button>
                 <button class="carousel-button" type="button" data-carousel-next aria-label="Proyecto siguiente">
                   <span aria-hidden="true">→</span>
+                </button>
+                <button class="carousel-button carousel-play" type="button" data-carousel-toggle aria-label="Pausar carrusel" title="Pausar carrusel">
+                  <span data-carousel-toggle-icon aria-hidden="true">Ⅱ</span>
                 </button>
               </div>
             </div>
@@ -301,6 +350,7 @@
       <p>&copy; 2026 Ivan Baguena</p>
       <a href="#inicio">Volver arriba <span aria-hidden="true">↑</span></a>
     </footer>
+    <script src="js/background.js" defer></script>
     <script src="js/script.js" defer></script>
   </body>
 </html>

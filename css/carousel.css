@@ -8,7 +8,7 @@
   overscroll-behavior-inline: contain;
   scrollbar-width: none;
   scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   touch-action: pan-x pan-y;
   -webkit-overflow-scrolling: touch;
 }
@@ -33,6 +33,38 @@
 
 .carousel-track > * {
   scroll-snap-align: start;
+}
+
+.carousel-progress {
+  background: var(--line-color);
+  height: 1px;
+  margin-top: 0.25rem;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.carousel-progress span {
+  background: var(--accent-gradient);
+  display: block;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  width: 100%;
+}
+
+.carousel.is-autoplaying .carousel-progress span {
+  animation: carousel-progress 7s linear infinite;
+}
+
+.carousel.is-paused .carousel-progress span {
+  animation-play-state: paused;
+}
+
+@keyframes carousel-progress {
+  to {
+    transform: scaleX(1);
+  }
 }
 
 .carousel-controls {
@@ -86,14 +118,12 @@
   opacity: 0.35;
 }
 
+.carousel-play {
+  color: var(--accent-strong);
+}
+
 .carousel-button:focus-visible,
 .carousel-viewport:focus-visible {
   outline: 2px solid var(--gta-pink);
   outline-offset: 4px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .carousel-viewport {
-    scroll-behavior: auto;
-  }
 }

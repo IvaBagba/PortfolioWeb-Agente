@@ -1,8 +1,13 @@
 # Portfolio de Ivan Baguena
 
 Portfolio web estático en español con navegación animada entre secciones,
-efectos de entrada, carruseles interactivos de áreas de desarrollo y proyectos
-públicos de GitHub.
+temas oscuro/claro, una red sutil de puntos conectados en movimiento y
+carruseles automáticos de tecnologías y proyectos.
+
+El modo oscuro es el predeterminado. La preferencia de tema queda guardada en
+el navegador. Los carruseles avanzan automáticamente, se pausan al pasar el
+cursor o al recibir el foco y permiten pausar/reanudar manualmente; respetan la
+preferencia de movimiento reducido del dispositivo.
 
 El formulario de contacto prepara un mensaje dirigido a
 `baguena.delabandera.ivan@gmail.com` y abre la aplicación de correo del visitante.

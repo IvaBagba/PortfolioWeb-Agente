@@ -5,6 +5,41 @@ const revealElements = document.querySelectorAll("[data-reveal]");
 const emailForms = document.querySelectorAll("[data-email-form]");
 const carousels = document.querySelectorAll("[data-carousel]");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const themeToggles = document.querySelectorAll("[data-theme-toggle]");
+const themeMeta = document.querySelector('meta[name="theme-color"]');
+
+function updateThemeControls(theme) {
+  const isDark = theme === "dark";
+
+  themeToggles.forEach((button) => {
+    const label = isDark ? "Claro" : "Oscuro";
+    const action = `Cambiar a modo ${isDark ? "claro" : "oscuro"}`;
+    button.setAttribute("aria-label", action);
+    button.setAttribute("title", action);
+    button.querySelector("[data-theme-label]")?.replaceChildren(label);
+    button.querySelector("[data-theme-icon]")?.replaceChildren(isDark ? "☼" : "☾");
+  });
+
+  if (themeMeta) themeMeta.setAttribute("content", isDark ? "#0d0e15" : "#f7f5f8");
+}
+
+updateThemeControls(document.documentElement.dataset.theme || "dark");
+
+themeToggles.forEach((button) => {
+  button.addEventListener("click", () => {
+    const theme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+    document.documentElement.dataset.theme = theme;
+    updateThemeControls(theme);
+
+    try {
+      window.localStorage.setItem("portfolio-theme", theme);
+    } catch (error) {
+      console.warn("No se pudo guardar la preferencia de tema.", error);
+    }
+
+    window.dispatchEvent(new Event("portfolio-theme-change"));
+  });
+});
 
 let activeScrollFrame = 0;
 
@@ -133,24 +168,34 @@ carousels.forEach((carousel) => {
   const viewport = carousel.querySelector("[data-carousel-viewport]");
   const previousButton = carousel.querySelector("[data-carousel-prev]");
   const nextButton = carousel.querySelector("[data-carousel-next]");
+  const toggleButton = carousel.querySelector("[data-carousel-toggle]");
+  const toggleIcon = carousel.querySelector("[data-carousel-toggle-icon]");
   const status = carousel.querySelector("[data-carousel-status]");
 
   if (!(viewport instanceof HTMLElement) ||
       !(previousButton instanceof HTMLButtonElement) ||
-      !(nextButton instanceof HTMLButtonElement)) {
+      !(nextButton instanceof HTMLButtonElement) ||
+      !(toggleButton instanceof HTMLButtonElement)) {
     return;
   }
 
+  const cards = Array.from(viewport.querySelectorAll(".carousel-track > *"));
+  const progress = carousel.querySelector(".carousel-progress");
+  const interval = 7000;
+  let timer = 0;
+  let hovered = false;
+  let focused = false;
+  let manuallyPaused = false;
+  let inView = !("IntersectionObserver" in window);
+
   function updateControls() {
     const maxScroll = viewport.scrollWidth - viewport.clientWidth;
-    const atStart = viewport.scrollLeft <= 2;
-    const atEnd = viewport.scrollLeft >= maxScroll - 2;
-
-    previousButton.disabled = atStart;
-    nextButton.disabled = atEnd;
+    const canScroll = cards.length > 1 && maxScroll > 2;
+    previousButton.disabled = !canScroll;
+    nextButton.disabled = !canScroll;
+    toggleButton.disabled = !canScroll || reducedMotion.matches;
 
     if (status) {
-      const cards = Array.from(viewport.querySelectorAll(".carousel-track > *"));
       const firstCard = cards[0];
       const gap = Number.parseFloat(
         getComputedStyle(viewport.querySelector(".carousel-track")).columnGap,
@@ -162,27 +207,111 @@ carousels.forEach((carousel) => {
       );
       status.textContent = `${String(Math.max(currentCard, 1)).padStart(2, "0")} / ${String(cards.length).padStart(2, "0")}`;
     }
+
+    cards.forEach((card, index) => {
+      card.setAttribute("aria-roledescription", "diapositiva");
+      card.setAttribute("aria-label", `${index + 1} de ${cards.length}`);
+    });
   }
 
-  function scrollByCard(direction) {
-    const card = viewport.querySelector(".carousel-track > *");
-    if (!card) return;
+  function scrollToCard(direction) {
+    if (cards.length < 2) return;
+    const currentCard = Number.parseInt(status?.textContent.split("/")[0] || "1", 10) - 1;
+    const nextCard = (currentCard + direction + cards.length) % cards.length;
+    const card = cards[nextCard];
+    const firstCard = cards[0];
+    const target = Math.min(
+      card.offsetLeft - firstCard.offsetLeft,
+      viewport.scrollWidth - viewport.clientWidth,
+    );
 
-    const styles = getComputedStyle(viewport.querySelector(".carousel-track"));
-    const gap = Number.parseFloat(styles.columnGap) || 0;
-    const distance = card.getBoundingClientRect().width + gap;
-
-    viewport.scrollBy({
-      left: distance * direction,
+    viewport.scrollTo({
+      left: Math.max(0, target),
       behavior: reducedMotion.matches ? "auto" : "smooth",
     });
   }
 
-  previousButton.addEventListener("click", () => scrollByCard(-1));
-  nextButton.addEventListener("click", () => scrollByCard(1));
+  function syncAutoplay() {
+    const shouldPlay = inView && !hovered && !focused && !manuallyPaused &&
+      !document.hidden && !reducedMotion.matches && cards.length > 1;
+
+    window.clearInterval(timer);
+    timer = 0;
+    carousel.classList.toggle("is-autoplaying", shouldPlay);
+    carousel.classList.toggle("is-paused", !shouldPlay);
+
+    if (shouldPlay) {
+      timer = window.setInterval(() => {
+        const currentCard = Number.parseInt(status?.textContent.split("/")[0] || "1", 10);
+        scrollToCard(currentCard >= cards.length ? 1 - cards.length : 1);
+      }, interval);
+    }
+
+    const action = manuallyPaused ? "Reanudar" : "Pausar";
+    const label = reducedMotion.matches
+      ? "Carrusel automático desactivado por preferencia de movimiento"
+      : `${action} reproducción automática`;
+    toggleButton.setAttribute("aria-label", label);
+    toggleButton.setAttribute("title", label);
+    if (toggleIcon) toggleIcon.textContent = manuallyPaused || reducedMotion.matches ? "▶" : "Ⅱ";
+    if (progress) progress.setAttribute("aria-hidden", "true");
+  }
+
+  previousButton.addEventListener("click", () => scrollToCard(-1));
+  nextButton.addEventListener("click", () => scrollToCard(1));
+  toggleButton.addEventListener("click", () => {
+    manuallyPaused = !manuallyPaused;
+    syncAutoplay();
+  });
+
+  carousel.addEventListener("pointerenter", () => {
+    hovered = true;
+    syncAutoplay();
+  });
+  carousel.addEventListener("pointerleave", () => {
+    hovered = false;
+    syncAutoplay();
+  });
+  carousel.addEventListener("focusin", () => {
+    focused = true;
+    syncAutoplay();
+  });
+  carousel.addEventListener("focusout", (event) => {
+    if (carousel.contains(event.relatedTarget)) return;
+    focused = false;
+    syncAutoplay();
+  });
   viewport.addEventListener("scroll", updateControls, { passive: true });
+  viewport.addEventListener("touchstart", () => {
+    hovered = true;
+    syncAutoplay();
+  }, { passive: true });
+  viewport.addEventListener("touchend", () => {
+    window.setTimeout(() => {
+      hovered = false;
+      syncAutoplay();
+    }, 900);
+  }, { passive: true });
   window.addEventListener("resize", updateControls);
+  document.addEventListener("visibilitychange", syncAutoplay);
+  reducedMotion.addEventListener("change", () => {
+    updateControls();
+    syncAutoplay();
+  });
+
+  if ("IntersectionObserver" in window) {
+    const carouselObserver = new IntersectionObserver(
+      ([entry]) => {
+        inView = entry.isIntersecting;
+        syncAutoplay();
+      },
+      { threshold: 0.2 },
+    );
+    carouselObserver.observe(carousel);
+  }
+
   updateControls();
+  syncAutoplay();
 });
 
 emailForms.forEach((form) => {
