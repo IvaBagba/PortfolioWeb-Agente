@@ -7,7 +7,7 @@
       name="description"
       content="Portfolio de Ivan Baguena, desarrollador backend. Proyectos, perfil y contacto."
     />
-    <meta name="theme-color" content="#101820" />
+    <meta name="theme-color" content="#0d0e15" />
     <title>Ivan Baguena | Desarrollador backend</title>
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/navbar.css" />
@@ -221,11 +221,40 @@
           <div class="contact-copy">
             <p>
               Abierto a nuevas oportunidades, colaboraciones y buenas
-              conversaciones sobre tecnología.
+              conversaciones sobre tecnología. El formulario prepara un correo
+              dirigido a mi dirección.
             </p>
-            <a class="button button-primary" href="mailto:baguena.delabandera.ivan@gmail.com">
-              Escríbeme <span aria-hidden="true">↗</span>
-            </a>
+            <form
+              class="contact-form"
+              data-email-form
+              data-recipient="baguena.delabandera.ivan@gmail.com"
+            >
+              <div class="form-field">
+                <label for="home-name">Tu nombre</label>
+                <input id="home-name" name="name" autocomplete="name" required maxlength="100" />
+              </div>
+              <div class="form-field">
+                <label for="home-email">Tu email</label>
+                <input
+                  id="home-email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  required
+                  maxlength="254"
+                />
+              </div>
+              <div class="form-field">
+                <label for="home-message">Mensaje</label>
+                <textarea id="home-message" name="message" required maxlength="5000"></textarea>
+              </div>
+              <button class="button button-primary form-submit" type="submit">
+                Preparar correo <span aria-hidden="true">↗</span>
+              </button>
+              <p class="form-note" data-email-status aria-live="polite">
+                Se abrirá tu aplicación de correo para que puedas revisarlo y enviarlo.
+              </p>
+            </form>
             <div class="contact-links">
               <a href="https://github.com/IvaBagba" target="_blank" rel="noopener noreferrer">GitHub</a>
               <a href="https://www.linkedin.com/in/ivabagba" target="_blank" rel="noopener noreferrer">LinkedIn</a>

@@ -1,7 +1,7 @@
 .site-header {
   -webkit-backdrop-filter: blur(18px);
   backdrop-filter: blur(18px);
-  background: rgba(16, 24, 32, 0.86);
+  background: rgba(13, 14, 21, 0.86);
   border-bottom: 1px solid var(--line-color);
   height: var(--header-height);
   position: sticky;
@@ -28,7 +28,12 @@
 }
 
 .brand-mark span {
-  color: var(--accent-color);
+  color: var(--gta-pink);
+  transition: color 450ms ease;
+}
+
+.brand-mark:hover span {
+  color: var(--gta-orange);
 }
 
 .nav-links {
@@ -43,7 +48,7 @@
   font-weight: 550;
   position: relative;
   text-decoration: none;
-  transition: color 180ms ease;
+  transition: color 450ms ease;
 }
 
 .nav-links a:hover,
@@ -52,26 +57,41 @@
 }
 
 .nav-links a[aria-current="location"]::after {
-  background: var(--accent-color);
+  background: var(--accent-gradient);
   bottom: -0.55rem;
   content: "";
   height: 2px;
   left: 0;
   position: absolute;
   width: 100%;
+  animation: nav-underline-in 650ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
 }
 
 .nav-links .nav-contact {
-  border: 1px solid rgba(224, 235, 242, 0.25);
+  border: 1px solid rgba(235, 228, 242, 0.25);
   border-radius: 4px;
   color: var(--text-color);
   padding: 0.65rem 0.9rem;
 }
 
 .nav-links .nav-contact:hover {
-  background: var(--accent-color);
-  border-color: var(--accent-color);
-  color: #10202a;
+  background: var(--accent-gradient);
+  border-color: transparent;
+  color: #fff;
+}
+
+@keyframes nav-underline-in {
+  from {
+    opacity: 0;
+    transform: scaleX(0.4);
+    transform-origin: left;
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin: left;
+  }
 }
 
 @media (max-width: 520px) {

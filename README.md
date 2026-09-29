@@ -1,8 +1,12 @@
 # Portfolio de Ivan Baguena
 
-Portfolio web estático en español con navegación de una página, desplazamiento
-suave entre secciones, animaciones discretas y una selección de proyectos
-públicos de GitHub.
+Portfolio web estático en español con navegación animada entre secciones,
+efectos de entrada y una selección de proyectos públicos de GitHub.
+
+El formulario de contacto prepara un mensaje dirigido a
+`baguena.delabandera.ivan@gmail.com` y abre la aplicación de correo del visitante.
+El visitante debe revisar y enviar el correo; el portfolio estático no envía
+mensajes a través de un servidor.
 
 ## Ver el sitio localmente
 

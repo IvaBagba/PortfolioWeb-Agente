@@ -14,15 +14,20 @@
     <link rel="stylesheet" href="../css/projectCards.css" />
   </head>
   <body>
-    <header>
+    <header class="site-header">
       <nav class="mainNav" aria-label="Navegación principal">
-        <a href="../index.html#inicio">Inicio</a>
-        <a href="../index.html#sobre-mi" aria-current="page">Sobre mí</a>
-        <a href="../index.html#proyectos">Proyectos</a>
-        <a href="../index.html#contacto">Contacto</a>
+        <a class="brand-mark" href="../index.html#inicio" aria-label="Ivan Baguena, inicio">
+          IB<span>.</span>
+        </a>
+        <div class="nav-links">
+          <a href="../index.html#inicio">Inicio</a>
+          <a href="../index.html#sobre-mi" aria-current="page">Sobre mí</a>
+          <a href="../index.html#proyectos">Proyectos</a>
+          <a class="nav-contact" href="../index.html#contacto">Contacto</a>
+        </div>
       </nav>
     </header>
-    <main class="page-content">
+    <main class="page-content" data-reveal>
       <p class="eyebrow">Un poco sobre mí</p>
       <h1>Hola, soy Ivan</h1>
       <p class="page-lead">
@@ -58,5 +63,6 @@
         <a href="mailto:baguena.delabandera.ivan@gmail.com">Email</a>
       </div>
     </footer>
+    <script src="../js/script.js" defer></script>
   </body>
 </html>
