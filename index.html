@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portfolio de Ivan Baguena, desarrollador backend. Proyectos, experiencia y contacto."
+      content="Portfolio de Ivan Baguena, desarrollador backend. Proyectos, perfil y contacto."
     />
-    <meta name="theme-color" content="#0d0e15" />
+    <meta name="theme-color" content="#101820" />
     <title>Ivan Baguena | Desarrollador backend</title>
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/navbar.css" />
@@ -21,95 +21,226 @@
     />
   </head>
   <body>
-    <header>
+    <header class="site-header">
       <nav class="mainNav" aria-label="Navegación principal">
-        <a href="./index.html" aria-current="page">Inicio</a>
-        <a href="./pages/about.html">Sobre mí</a>
-        <a href="./pages/projects.html">Proyectos</a>
-        <a href="./pages/contact.html">Contacto</a>
+        <a class="brand-mark" href="#inicio" aria-label="Ivan Baguena, inicio">IB<span>.</span></a>
+        <div class="nav-links">
+          <a href="#inicio" aria-current="location">Inicio</a>
+          <a href="#sobre-mi">Sobre mí</a>
+          <a href="#proyectos">Proyectos</a>
+          <a class="nav-contact" href="#contacto">Contacto</a>
+        </div>
       </nav>
     </header>
 
-    <main>
-      <section class="hero_sec">
-        <p class="eyebrow">Desarrollador backend · España</p>
-        <h1>Ivan Baguena</h1>
-        <h2>Construyendo soluciones, aprendiendo siempre</h2>
-        <p>
-          Soy desarrollador backend y técnico en desarrollo de aplicaciones
-          multiplataforma. Me interesa crear software útil, explorar nuevas
-          tecnologías y colaborar en proyectos que resuelvan problemas reales.
-        </p>
-        <div class="socials">
-          <a href="https://github.com/IvaBagba" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
-          </a>
-          <a href="https://www.linkedin.com/in/ivabagba" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn
-          </a>
-          <a href="mailto:baguena.delabandera.ivan@gmail.com">
-            <i class="fa-regular fa-envelope" aria-hidden="true"></i> Email
+    <main class="one-page">
+      <section class="page-section hero-section" id="inicio" aria-labelledby="hero-title">
+        <div class="section-inner hero-layout">
+          <div class="hero-copy" data-reveal>
+            <p class="eyebrow">Desarrollador backend <span></span> España</p>
+            <h1 id="hero-title">Ivan<br /><span>Baguena.</span></h1>
+            <p class="hero-lead">
+              Desarrollo soluciones digitales con curiosidad, criterio y ganas
+              de hacer las cosas bien.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#proyectos">Explorar proyectos</a>
+              <a class="text-link" href="mailto:baguena.delabandera.ivan@gmail.com">
+                Hablemos <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+          <div class="hero-aside" data-reveal>
+            <span class="hero-index">01 / 04</span>
+            <p>
+              Técnico en desarrollo de aplicaciones multiplataforma,
+              especializado en backend y siempre aprendiendo.
+            </p>
+            <div class="hero-socials">
+              <a href="https://github.com/IvaBagba" target="_blank" rel="noopener noreferrer">
+                GitHub <span aria-hidden="true">↗</span>
+              </a>
+              <a href="https://www.linkedin.com/in/ivabagba" target="_blank" rel="noopener noreferrer">
+                LinkedIn <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+          <a class="scroll-cue" href="#sobre-mi">
+            <span class="scroll-line" aria-hidden="true"></span>
+            Desliza para explorar
           </a>
         </div>
       </section>
 
-      <section class="skills_sec" aria-labelledby="skills-title">
-        <h3 id="skills-title">Áreas de interés</h3>
-        <ul>
-          <li>
-            <i class="fas fa-server" aria-hidden="true"></i>
-            <span>Backend</span>
-          </li>
-          <li>
-            <i class="fas fa-laptop-code" aria-hidden="true"></i>
-            <span>Desarrollo web</span>
-          </li>
-          <li>
-            <i class="fas fa-mobile-alt" aria-hidden="true"></i>
-            <span>Multiplataforma</span>
-          </li>
-        </ul>
-      </section>
-
-      <section class="project_sec" aria-labelledby="featured-title">
-        <h3 id="featured-title">Proyecto destacado</h3>
-        <article class="project_card">
-          <div class="project_overlay" aria-hidden="true"></div>
-          <div class="project_content">
-            <p class="project_kicker">Aplicación multiplataforma</p>
-            <h4>Eventide App</h4>
-            <p>
-              Aplicación Kotlin Multiplatform para Android, iOS, web y escritorio,
-              conectada al backend Eventide API.
+      <section class="page-section about-section" id="sobre-mi" aria-labelledby="about-title">
+        <div class="section-inner split-layout" data-reveal>
+          <div>
+            <p class="eyebrow">02 <span></span> Perfil</p>
+            <h2 id="about-title">Tecnología con<br />intención.</h2>
+          </div>
+          <div class="section-copy">
+            <p class="section-lead">
+              Me gusta entender el problema antes de escribir la solución.
             </p>
-            <div class="project_tags" aria-label="Tecnologías">
-              <span>Kotlin</span>
-              <span>Compose Multiplatform</span>
-              <span>API</span>
-            </div>
-            <a
-              href="https://github.com/IvaBagba/Eventide_App"
-              class="btn-card"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Ver repositorio
+            <p>
+              Soy desarrollador backend de España y técnico en desarrollo de
+              aplicaciones multiplataforma. Disfruto aprendiendo tecnologías
+              nuevas, colaborando en equipo y convirtiendo ideas en software
+              útil y bien construido.
+            </p>
+            <a class="text-link" href="./pages/about.html">
+              Más sobre mí <span aria-hidden="true">↗</span>
             </a>
           </div>
-        </article>
-        <div class="more-projects-container">
-          <a href="./pages/projects.html" class="btn-more">Ver todos los proyectos</a>
+        </div>
+      </section>
+
+      <section class="page-section expertise-section" id="enfoque" aria-labelledby="expertise-title">
+        <div class="section-inner" data-reveal>
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Mi enfoque</p>
+              <h2 id="expertise-title">De la idea al producto.</h2>
+            </div>
+            <p class="section-note">
+              Una base versátil para construir experiencias útiles en distintas
+              plataformas.
+            </p>
+          </div>
+          <div class="expertise-grid">
+            <article class="expertise-card">
+              <span class="expertise-number">01</span>
+              <i class="fas fa-server" aria-hidden="true"></i>
+              <h3>Backend</h3>
+              <p>Servicios y lógica de aplicación con foco en claridad y fiabilidad.</p>
+            </article>
+            <article class="expertise-card">
+              <span class="expertise-number">02</span>
+              <i class="fas fa-laptop-code" aria-hidden="true"></i>
+              <h3>Desarrollo web</h3>
+              <p>Interfaces cuidadas, accesibles y adaptables a cada pantalla.</p>
+            </article>
+            <article class="expertise-card">
+              <span class="expertise-number">03</span>
+              <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+              <h3>Multiplataforma</h3>
+              <p>Aplicaciones que llevan una misma idea a más dispositivos.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-section projects-section" id="proyectos" aria-labelledby="projects-title">
+        <div class="section-inner" data-reveal>
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">03 <span></span> Trabajo seleccionado</p>
+              <h2 id="projects-title">Proyectos.</h2>
+            </div>
+            <a class="text-link" href="./pages/projects.html">
+              Ver selección completa <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <div class="project-grid">
+            <article class="project-tile">
+              <div class="project-tile-top">
+                <span>Aplicación multiplataforma</span>
+                <span class="project-arrow" aria-hidden="true">↗</span>
+              </div>
+              <h3>Eventide App</h3>
+              <p>
+                Aplicación Compose Multiplatform para Android, iOS, web y
+                escritorio, conectada al backend Eventide API.
+              </p>
+              <div class="project_tags" aria-label="Tecnologías">
+                <span>Kotlin</span>
+                <span>Compose</span>
+              </div>
+              <a
+                class="project-card-link"
+                href="https://github.com/IvaBagba/Eventide_App"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Ver Eventide App en GitHub"
+              ></a>
+            </article>
+            <article class="project-tile">
+              <div class="project-tile-top">
+                <span>Servicios y backend</span>
+                <span class="project-arrow" aria-hidden="true">↗</span>
+              </div>
+              <h3>Eventide API</h3>
+              <p>
+                Proyecto backend Java que acompaña a la aplicación Eventide y
+                forma parte de mi proyecto final.
+              </p>
+              <div class="project_tags" aria-label="Tecnologías">
+                <span>Java</span>
+                <span>API</span>
+              </div>
+              <a
+                class="project-card-link"
+                href="https://github.com/IvaBagba/Eventide_Api"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Ver Eventide API en GitHub"
+              ></a>
+            </article>
+            <article class="project-tile">
+              <div class="project-tile-top">
+                <span>Desarrollo backend</span>
+                <span class="project-arrow" aria-hidden="true">↗</span>
+              </div>
+              <h3>PokeCardApi</h3>
+              <p>
+                API desarrollada con Java y Spring Boot como proyecto
+                independiente.
+              </p>
+              <div class="project_tags" aria-label="Tecnologías">
+                <span>Java</span>
+                <span>Spring Boot</span>
+              </div>
+              <a
+                class="project-card-link"
+                href="https://github.com/IvaBagba/PokeCardApi"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Ver PokeCardApi en GitHub"
+              ></a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-section contact-section" id="contacto" aria-labelledby="contact-title">
+        <div class="section-inner contact-layout" data-reveal>
+          <div>
+            <p class="eyebrow">04 <span></span> Contacto</p>
+            <h2 id="contact-title">Hagamos algo<br />que importe.</h2>
+          </div>
+          <div class="contact-copy">
+            <p>
+              Abierto a nuevas oportunidades, colaboraciones y buenas
+              conversaciones sobre tecnología.
+            </p>
+            <a class="button button-primary" href="mailto:baguena.delabandera.ivan@gmail.com">
+              Escríbeme <span aria-hidden="true">↗</span>
+            </a>
+            <div class="contact-links">
+              <a href="https://github.com/IvaBagba" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://www.linkedin.com/in/ivabagba" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="mailto:baguena.delabandera.ivan@gmail.com">Email</a>
+            </div>
+          </div>
         </div>
       </section>
     </main>
 
-    <footer>
+    <footer class="site-footer">
+      <a class="footer-brand" href="#inicio">IB<span>.</span></a>
       <p>&copy; 2026 Ivan Baguena</p>
-      <div class="footerSocials">
-        <a href="https://github.com/IvaBagba" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://www.linkedin.com/in/ivabagba" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="mailto:baguena.delabandera.ivan@gmail.com">Email</a>
-      </div>
+      <a href="#inicio">Volver arriba <span aria-hidden="true">↑</span></a>
     </footer>
+    <script src="js/script.js" defer></script>
   </body>
 </html>

@@ -1,7 +1,8 @@
 # Portfolio de Ivan Baguena
 
-Portfolio web estático en español con información profesional, enlaces de
-contacto y una selección de proyectos públicos de GitHub.
+Portfolio web estático en español con navegación de una página, desplazamiento
+suave entre secciones, animaciones discretas y una selección de proyectos
+públicos de GitHub.
 
 ## Ver el sitio localmente
 
