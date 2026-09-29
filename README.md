@@ -25,9 +25,11 @@ Los datos del perfil y los proyectos se mantienen en las páginas HTML. Los
 enlaces de los proyectos apuntan a los repositorios públicos del perfil
 [IvaBagba](https://github.com/IvaBagba).
 
-Las imágenes de muestra del perfil están en `assets/profile-placeholder.svg` y
-`assets/profile-placeholder-about.svg`. Puedes reemplazar esos archivos por
-tus fotos y conservar sus nombres, o actualizar las rutas `src` en `index.html`.
+El retrato principal se guarda localmente en
+`assets/ivan-baguena-linkedin.jpg`, así no depende de la URL temporal de LinkedIn.
+La imagen de muestra de la sección «Sobre mí» sigue en
+`assets/profile-placeholder-about.svg`; puedes sustituirla por otra foto o
+actualizar su ruta `src` en `index.html`.
 
 ## Páginas
 
