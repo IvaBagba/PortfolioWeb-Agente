@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 900" fill="none">
+  <defs>
+    <linearGradient id="background" x1="80" y1="60" x2="650" y2="850" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#28202e"/>
+      <stop offset=".56" stop-color="#17141e"/>
+      <stop offset="1" stop-color="#35192b"/>
+    </linearGradient>
+    <linearGradient id="silhouette" x1="260" y1="316" x2="476" y2="830" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ff72a8" stop-opacity=".72"/>
+      <stop offset="1" stop-color="#a855f7" stop-opacity=".18"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="matrix(250 290 -243 209 486 272)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ff2a7a" stop-opacity=".25"/>
+      <stop offset="1" stop-color="#ff2a7a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <path fill="url(#background)" d="M0 0h720v900H0z"/>
+  <path fill="url(#glow)" d="M0 0h720v900H0z"/>
+  <circle cx="360" cy="320" r="118" fill="url(#silhouette)"/>
+  <path fill="url(#silhouette)" d="M109 900c15-189 99-338 251-338s236 149 251 338H109Z"/>
+  <path stroke="#fff" stroke-opacity=".16" d="M32 32h656v836H32z"/>
+  <path stroke="#ff72a8" stroke-opacity=".38" d="M48 118V48h70M672 782v70h-70"/>
+  <text x="50%" y="92%" fill="#fff" fill-opacity=".78" font-family="Arial, sans-serif" font-size="18" letter-spacing="4" text-anchor="middle">AÑADE AQUÍ TU FOTO</text>
+</svg>

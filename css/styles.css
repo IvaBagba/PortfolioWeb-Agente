@@ -223,7 +223,8 @@ p {
   align-items: end;
   display: grid;
   gap: 3rem;
-  grid-template-columns: minmax(0, 1fr) minmax(200px, 270px);
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.62fr);
+  max-width: 1320px;
   padding-bottom: 3rem;
   position: relative;
 }
@@ -366,6 +367,10 @@ p {
   display: grid;
   gap: clamp(3rem, 11vw, 10rem);
   grid-template-columns: minmax(0, 1fr) minmax(300px, 0.85fr);
+}
+
+.about-section .split-layout {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
 }
 
 .section-copy {
@@ -801,6 +806,10 @@ footer:not(.site-footer) p {
 
   .hero-aside {
     max-width: 420px;
+  }
+
+  .about-section .split-layout {
+    grid-template-columns: 1fr;
   }
 
   .scroll-cue {

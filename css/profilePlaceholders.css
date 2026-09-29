@@ -1,0 +1,80 @@
+.profile-photo {
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.profile-photo img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  transition:
+    filter 700ms ease,
+    transform 1200ms cubic-bezier(0.2, 0.75, 0.25, 1);
+  width: 100%;
+}
+
+.profile-photo:hover img {
+  filter: saturate(1.08);
+  transform: scale(1.025);
+}
+
+.profile-photo figcaption {
+  align-items: center;
+  backdrop-filter: blur(12px);
+  background: rgba(13, 14, 21, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  bottom: 1rem;
+  color: #fff;
+  display: flex;
+  font-size: 0.65rem;
+  justify-content: space-between;
+  left: 1rem;
+  letter-spacing: 0.1em;
+  padding: 0.65rem 0.75rem;
+  position: absolute;
+  right: 1rem;
+  text-transform: uppercase;
+}
+
+.profile-photo figcaption span:last-child {
+  color: #ffb0cc;
+}
+
+.profile-photo-hero {
+  aspect-ratio: 4 / 5;
+  border: 1px solid var(--line-color);
+  border-radius: 6px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
+  justify-self: end;
+  max-height: 610px;
+  max-width: 450px;
+  width: 100%;
+}
+
+.profile-photo-about {
+  aspect-ratio: 3 / 2;
+  border: 1px solid var(--line-color);
+  border-radius: 6px;
+  margin-top: 2.5rem;
+  max-width: 460px;
+}
+
+@media (max-width: 760px) {
+  .profile-photo-hero {
+    justify-self: start;
+    max-height: 480px;
+    max-width: 390px;
+  }
+
+  .profile-photo-about {
+    margin-top: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-photo img {
+    transition: none;
+  }
+}

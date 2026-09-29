@@ -25,6 +25,10 @@ Los datos del perfil y los proyectos se mantienen en las páginas HTML. Los
 enlaces de los proyectos apuntan a los repositorios públicos del perfil
 [IvaBagba](https://github.com/IvaBagba).
 
+Las imágenes de muestra del perfil están en `assets/profile-placeholder.svg` y
+`assets/profile-placeholder-about.svg`. Puedes reemplazar esos archivos por
+tus fotos y conservar sus nombres, o actualizar las rutas `src` en `index.html`.
+
 ## Páginas
 
 - `index.html`: presentación y proyecto destacado.
