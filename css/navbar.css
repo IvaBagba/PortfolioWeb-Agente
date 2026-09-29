@@ -38,6 +38,10 @@ header {
   color: var(--gta-pink);
 }
 
+.mainNav a[aria-current="page"] {
+  color: var(--gta-pink);
+}
+
 .mainNav a::after {
   content: "";
   position: absolute;
@@ -53,4 +57,21 @@ header {
 
 .mainNav a:hover::after {
   width: 100%;
+}
+
+.mainNav a[aria-current="page"]::after {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .mainNav {
+    flex-wrap: wrap;
+    gap: 0.8rem 1.25rem;
+    padding: 1rem 0.75rem;
+  }
+
+  .mainNav a {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+  }
 }

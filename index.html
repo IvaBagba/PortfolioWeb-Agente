@@ -2,10 +2,13 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portfolio personal de IvanB" />
-    <title>IvanB | Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio de Ivan Baguena, desarrollador backend. Proyectos, experiencia y contacto."
+    />
+    <meta name="theme-color" content="#0d0e15" />
+    <title>Ivan Baguena | Desarrollador backend</title>
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="css/projectCards.css" />
@@ -18,99 +21,94 @@
     />
   </head>
   <body>
-    <!-- Navigation Bar -->
     <header>
-      <nav class="mainNav">
-        <a href="./index.html">Inicio</a>
+      <nav class="mainNav" aria-label="Navegación principal">
+        <a href="./index.html" aria-current="page">Inicio</a>
         <a href="./pages/about.html">Sobre mí</a>
         <a href="./pages/projects.html">Proyectos</a>
         <a href="./pages/contact.html">Contacto</a>
       </nav>
     </header>
 
-    <!--Main Content-->
     <main>
       <section class="hero_sec">
+        <p class="eyebrow">Desarrollador backend · España</p>
         <h1>Ivan Baguena</h1>
-        <h2>Bienvenido</h2>
+        <h2>Construyendo soluciones, aprendiendo siempre</h2>
         <p>
-          Me llamo Ivan, apasionado del mundo de la informatica, sobre todo de
-          la programacion y el montaje de equipos. Me he formado en desarrollo
-          de aplicaciones multiplataforma y tengo conocimientos de desarrollo
-          web. Me encanta aprender cosas nuevas y mejorar mis habilidades
-          constantemente, tambien disfuto mucho de trabajar en equipo, colaborar
-          en proyectos y resolver problemas.
+          Soy desarrollador backend y técnico en desarrollo de aplicaciones
+          multiplataforma. Me interesa crear software útil, explorar nuevas
+          tecnologías y colaborar en proyectos que resuelvan problemas reales.
         </p>
-
         <div class="socials">
-          <a href="https://www.linkedin.com/in/ivabagba" target="_blank"
-            >LinkedIn</a
-          >
-          <a href="mailto:baguena.delabandera.ivan@gmail.com" target="_blank"
-            >Email</a
-          >
-          <a href="https://github.com/ivabagba" target="_blank">GitHub</a>
+          <a href="https://github.com/IvaBagba" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/ivabagba" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn
+          </a>
+          <a href="mailto:baguena.delabandera.ivan@gmail.com">
+            <i class="fa-regular fa-envelope" aria-hidden="true"></i> Email
+          </a>
         </div>
       </section>
 
-      <section class="skills_sec">
+      <section class="skills_sec" aria-labelledby="skills-title">
+        <h3 id="skills-title">Áreas de interés</h3>
         <ul>
           <li>
-            <i class="fas fa-server"></i>
+            <i class="fas fa-server" aria-hidden="true"></i>
             <span>Backend</span>
           </li>
           <li>
-            <i class="fas fa-laptop-code"></i>
-            <span>Web</span>
+            <i class="fas fa-laptop-code" aria-hidden="true"></i>
+            <span>Desarrollo web</span>
           </li>
           <li>
-            <i class="fas fa-mobile-alt"></i>
-            <span>Android/IOS</span>
+            <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+            <span>Multiplataforma</span>
           </li>
         </ul>
       </section>
 
-      <section class="project_sec">
-        <h3>Proyecto Destacado</h3>
-
-        <div class="project_card">
-          <!-- Capa oscura para asegurar que el texto sea legible -->
-          <div class="project_overlay"></div>
-
-          <!-- Contenido encima de la imagen -->
+      <section class="project_sec" aria-labelledby="featured-title">
+        <h3 id="featured-title">Proyecto destacado</h3>
+        <article class="project_card">
+          <div class="project_overlay" aria-hidden="true"></div>
           <div class="project_content">
-            <h4>placeholder</h4>
-            <p>placeholder description</p>
-
-            <div class="project_tags">
-              <span>PHtag</span>
-              <span>PHtag</span>
+            <p class="project_kicker">Aplicación multiplataforma</p>
+            <h4>Eventide App</h4>
+            <p>
+              Aplicación Kotlin Multiplatform para Android, iOS, web y escritorio,
+              conectada al backend Eventide API.
+            </p>
+            <div class="project_tags" aria-label="Tecnologías">
+              <span>Kotlin</span>
+              <span>Compose Multiplatform</span>
+              <span>API</span>
             </div>
-
-            <a href="./pages/projects.html" class="btn-card">Ver detalles</a>
+            <a
+              href="https://github.com/IvaBagba/Eventide_App"
+              class="btn-card"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver repositorio
+            </a>
           </div>
-        </div>
-
-        <!-- Botón SEPARADO y centrado para ver más proyectos -->
+        </article>
         <div class="more-projects-container">
-          <a href="./pages/projects.html" class="btn-more"
-            >Ver todos los proyectos</a
-          >
+          <a href="./pages/projects.html" class="btn-more">Ver todos los proyectos</a>
         </div>
       </section>
     </main>
 
-    <!-- Footer -->
     <footer>
-      <p>&copy; 2026 Ivan Baguena • Ivabagba</p>
+      <p>&copy; 2026 Ivan Baguena</p>
       <div class="footerSocials">
-        <a href="https://www.linkedin.com/in/ivabagba" target="_blank"
-          >LinkedIn</a
-        >
-        <a href="mailto:baguena.delabandera.ivan@gmail.com" target="_blank"
-          >Email</a
-        >
-        <a href="https://github.com/ivabagba" target="_blank">GitHub</a>
+        <a href="https://github.com/IvaBagba" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/ivabagba" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:baguena.delabandera.ivan@gmail.com">Email</a>
       </div>
     </footer>
   </body>

@@ -49,16 +49,154 @@ h2 {
 }
 
 main {
-  max-width: 900px;
+  max-width: 1080px;
   margin: 0 auto;
-  padding: 3rem 2rem;
+  padding: 3.5rem 2rem;
 }
 
 p {
   color: #a0a0a0;
   line-height: 1.8;
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-bottom: 1.5rem;
+}
+
+.hero_sec {
+  max-width: 760px;
+  padding: 3.5rem 0 1rem;
+}
+
+.hero_sec h1,
+.page-content h1 {
+  font-size: clamp(2.6rem, 8vw, 4.5rem);
+  overflow-wrap: anywhere;
+}
+
+.hero_sec h2 {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  line-height: 1.6;
+}
+
+.eyebrow,
+.project_kicker {
+  color: var(--gta-orange);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.socials,
+.footerSocials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.socials a,
+.footerSocials a,
+.content-panel a {
+  color: var(--text-color);
+  text-decoration-color: var(--gta-pink);
+  text-underline-offset: 0.25em;
+  transition: color 0.2s ease;
+}
+
+.socials a:hover,
+.footerSocials a:hover,
+.content-panel a:hover {
+  color: var(--gta-pink);
+}
+
+.socials i {
+  color: var(--gta-orange);
+  margin-right: 0.35rem;
+}
+
+.page-content {
+  min-height: calc(100vh - 170px);
+}
+
+.page-content > h1 {
+  margin-bottom: 1rem;
+}
+
+.page-lead {
+  font-size: 1.15rem;
+  max-width: 720px;
+}
+
+.content-panel {
+  border-left: 2px solid rgba(255, 42, 122, 0.6);
+  margin: 2.5rem 0;
+  padding: 0.25rem 0 0.25rem 1.5rem;
+}
+
+.content-panel h2 {
+  color: var(--text-color);
+  font-size: 1.2rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.75rem;
+}
+
+.content-panel p {
+  max-width: 760px;
+}
+
+.page-action {
+  margin-top: 2rem;
+}
+
+.contact-list {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin-top: 3rem;
+  max-width: 800px;
+}
+
+.contact-link {
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text-color);
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 100px 1fr auto;
+  padding: 1.4rem 0;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.contact-link:hover {
+  color: var(--gta-pink);
+}
+
+.contact-label {
+  color: var(--gta-orange);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+footer {
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  justify-content: space-between;
+  margin: 2rem auto 0;
+  max-width: 1080px;
+  padding: 1.5rem 2rem;
+}
+
+footer p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+footer .footerSocials {
+  font-size: 0.9rem;
 }
 
 /* Skill Cards Styles */
@@ -123,4 +261,38 @@ p {
   background-image: var(--vice-city-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .hero_sec {
+    padding-top: 2rem;
+  }
+
+  .skills_sec ul {
+    grid-template-columns: 1fr;
+  }
+
+  .skills_sec li {
+    min-height: 180px;
+    padding: 2rem 1rem;
+  }
+
+  .contact-link {
+    gap: 0.5rem;
+    grid-template-columns: 1fr auto;
+  }
+
+  .contact-label {
+    grid-column: 1 / -1;
+  }
+
+  footer {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 1.5rem 1.25rem;
+  }
 }

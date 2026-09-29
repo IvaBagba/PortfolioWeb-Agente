@@ -1,26 +1,93 @@
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Proyectos | IvanB</title>
+    <meta
+      name="description"
+      content="Proyectos públicos de Ivan Baguena en GitHub: backend, Kotlin Multiplatform y Java."
+    />
+    <meta name="theme-color" content="#0d0e15" />
+    <title>Proyectos | Ivan Baguena</title>
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/projectCards.css" />
   </head>
-  <!-- Navigation Bar -->
-  <header>
-    <nav class="mainNav">
-      <a href="../index.html">Inicio</a>
-      <a href="../pages/about.html">Sobre mí</a>
-      <a href="../pages/projects.html">Proyectos</a>
-      <a href="../pages/contact.html">Contacto</a>
-    </nav>
-  </header>
   <body>
-    <main>
+    <header>
+      <nav class="mainNav" aria-label="Navegación principal">
+        <a href="../index.html">Inicio</a>
+        <a href="./about.html">Sobre mí</a>
+        <a href="./projects.html" aria-current="page">Proyectos</a>
+        <a href="./contact.html">Contacto</a>
+      </nav>
+    </header>
+    <main class="page-content">
+      <p class="eyebrow">Código y aprendizaje</p>
       <h1>Proyectos</h1>
-      <p>Estos son algunos de mis proyectos más destacados:</p>
-      <!-- Aquí irían los detalles de los proyectos -->
+      <p class="page-lead">
+        Una selección de proyectos públicos de mi perfil de GitHub. Las
+        descripciones y tecnologías se basan en la información disponible en
+        cada repositorio.
+      </p>
+      <section class="project-grid" aria-label="Proyectos de GitHub">
+        <article class="project-tile">
+          <p class="project_kicker">Kotlin · Multiplataforma</p>
+          <h2>Eventide App</h2>
+          <p>
+            Aplicación Compose Multiplatform para Android, iOS, web y escritorio,
+            asociada al backend Eventide API.
+          </p>
+          <div class="project_tags" aria-label="Tecnologías">
+            <span>Kotlin</span>
+            <span>Compose</span>
+          </div>
+          <a href="https://github.com/IvaBagba/Eventide_App" target="_blank" rel="noopener noreferrer">
+            Ver repositorio <span aria-hidden="true">→</span>
+          </a>
+        </article>
+        <article class="project-tile">
+          <p class="project_kicker">Java · Backend</p>
+          <h2>Eventide API</h2>
+          <p>
+            Proyecto backend Java que acompaña a la aplicación Eventide. El
+            repositorio forma parte de mi trabajo de proyecto final.
+          </p>
+          <div class="project_tags" aria-label="Tecnologías">
+            <span>Java</span>
+            <span>API</span>
+          </div>
+          <a href="https://github.com/IvaBagba/Eventide_Api" target="_blank" rel="noopener noreferrer">
+            Ver repositorio <span aria-hidden="true">→</span>
+          </a>
+        </article>
+        <article class="project-tile">
+          <p class="project_kicker">Java · Spring Boot</p>
+          <h2>PokeCardApi</h2>
+          <p>
+            API desarrollada con Spring Boot y Java, publicada en GitHub como
+            proyecto independiente.
+          </p>
+          <div class="project_tags" aria-label="Tecnologías">
+            <span>Java</span>
+            <span>Spring Boot</span>
+          </div>
+          <a href="https://github.com/IvaBagba/PokeCardApi" target="_blank" rel="noopener noreferrer">
+            Ver repositorio <span aria-hidden="true">→</span>
+          </a>
+        </article>
+      </section>
+      <a class="btn-more page-action" href="https://github.com/IvaBagba" target="_blank" rel="noopener noreferrer">
+        Ver todos mis repositorios
+      </a>
     </main>
+    <footer>
+      <p>&copy; 2026 Ivan Baguena</p>
+      <div class="footerSocials">
+        <a href="https://github.com/IvaBagba" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/ivabagba" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:baguena.delabandera.ivan@gmail.com">Email</a>
+      </div>
+    </footer>
   </body>
 </html>

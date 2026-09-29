@@ -64,7 +64,7 @@
 
   background: linear-gradient(
     to top,
-    rgba (13, 14, 21, 1) 0%,
+    rgba(13, 14, 21, 1) 0%,
     rgba(13, 14, 21, 0.4) 50%,
     transparent 100%
   );
@@ -90,9 +90,15 @@
   margin-bottom: 1.5rem;
 }
 
+.project_content .project_kicker {
+  color: #ffb33f;
+  margin-bottom: 0.5rem;
+}
+
 /* Etiquetas (Java, MySQL, etc.) */
 .project_tags {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.8rem;
   margin-bottom: 2rem;
 }
@@ -171,4 +177,78 @@
     0 0 15px rgba(255, 42, 122, 0.4),
     inset 0 0 10px rgba(255, 42, 122, 0.1);
   transform: translateY(-2px);
+}
+
+.project-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 3rem 0 1rem;
+}
+
+.project-tile {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.015));
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 1.5rem;
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.project-tile:hover {
+  border-color: rgba(255, 42, 122, 0.55);
+  transform: translateY(-5px);
+}
+
+.project-tile h2 {
+  color: var(--text-color);
+  font-size: 1.45rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+.project-tile p:not(.project_kicker) {
+  flex: 1;
+}
+
+.project-tile .project_tags {
+  margin: 0 0 1.5rem;
+}
+
+.project-tile a {
+  color: var(--gta-orange);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.project-tile a:hover {
+  color: var(--gta-pink);
+}
+
+@media (max-width: 800px) {
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .project_card {
+    min-height: 400px;
+  }
+
+  .project_content {
+    padding: 1.5rem;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-tile {
+    padding: 1.25rem;
+  }
 }

@@ -1,29 +1,69 @@
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contacto | IvanB</title>
+    <meta
+      name="description"
+      content="Contacta con Ivan Baguena por email, LinkedIn o GitHub."
+    />
+    <meta name="theme-color" content="#0d0e15" />
+    <title>Contacto | Ivan Baguena</title>
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/projectCards.css" />
   </head>
   <body>
-    <!-- Navigation Bar -->
     <header>
-      <nav class="mainNav">
+      <nav class="mainNav" aria-label="Navegación principal">
         <a href="../index.html">Inicio</a>
-        <a href="../pages/about.html">Sobre mí</a>
-        <a href="../pages/projects.html">Proyectos</a>
-        <a href="../pages/contact.html">Contacto</a>
+        <a href="./about.html">Sobre mí</a>
+        <a href="./projects.html">Proyectos</a>
+        <a href="./contact.html" aria-current="page">Contacto</a>
       </nav>
     </header>
-    <main>
+    <main class="page-content">
+      <p class="eyebrow">Hablemos</p>
       <h1>Contacto</h1>
-      <p>
-        Si quieres ponerte en contacto conmigo, puedes hacerlo a través de los
-        siguientes medios:
+      <p class="page-lead">
+        Estoy abierto a conocer nuevos proyectos y oportunidades profesionales.
+        Puedes encontrarme en estos canales:
       </p>
-      <!-- Aquí irían los detalles de contacto -->
+      <section class="contact-list" aria-label="Canales de contacto">
+        <a class="contact-link" href="mailto:baguena.delabandera.ivan@gmail.com">
+          <span class="contact-label">Email</span>
+          <span>baguena.delabandera.ivan@gmail.com</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <a
+          class="contact-link"
+          href="https://www.linkedin.com/in/ivabagba"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="contact-label">LinkedIn</span>
+          <span>linkedin.com/in/ivabagba</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <a
+          class="contact-link"
+          href="https://github.com/IvaBagba"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="contact-label">GitHub</span>
+          <span>github.com/IvaBagba</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </section>
     </main>
+    <footer>
+      <p>&copy; 2026 Ivan Baguena</p>
+      <div class="footerSocials">
+        <a href="https://github.com/IvaBagba" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/ivabagba" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:baguena.delabandera.ivan@gmail.com">Email</a>
+      </div>
+    </footer>
   </body>
 </html>

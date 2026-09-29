@@ -1,26 +1,62 @@
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sobre mí | IvanB</title>
+    <meta
+      name="description"
+      content="Conoce a Ivan Baguena, desarrollador backend y técnico en desarrollo de aplicaciones multiplataforma."
+    />
+    <meta name="theme-color" content="#0d0e15" />
+    <title>Sobre mí | Ivan Baguena</title>
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/projectCards.css" />
   </head>
   <body>
-    <!-- Navigation Bar -->
     <header>
-      <nav class="mainNav">
+      <nav class="mainNav" aria-label="Navegación principal">
         <a href="../index.html">Inicio</a>
-        <a href="../pages/about.html">Sobre mí</a>
-        <a href="../pages/projects.html">Proyectos</a>
-        <a href="../pages/contact.html">Contacto</a>
+        <a href="./about.html" aria-current="page">Sobre mí</a>
+        <a href="./projects.html">Proyectos</a>
+        <a href="./contact.html">Contacto</a>
       </nav>
     </header>
-    <main>
-      <h1>Sobre mí</h1>
-      <p>Me llamo Ivan Baguena y soy un desarrollador web.</p>
-      <!-- Aquí irían los detalles sobre mí -->
+    <main class="page-content">
+      <p class="eyebrow">Un poco sobre mí</p>
+      <h1>Hola, soy Ivan</h1>
+      <p class="page-lead">
+        Desarrollador backend de España, con formación en desarrollo de
+        aplicaciones multiplataforma y conocimientos de desarrollo web.
+      </p>
+      <section class="content-panel">
+        <h2>Mi forma de trabajar</h2>
+        <p>
+          Me gusta aprender tecnologías nuevas, mejorar mis habilidades y
+          participar en proyectos en equipo. Disfruto colaborando, analizando
+          problemas y convirtiendo ideas en soluciones de software.
+        </p>
+      </section>
+      <section class="content-panel">
+        <h2>Qué estoy explorando</h2>
+        <p>
+          En mis proyectos públicos trabajo con backend Java, aplicaciones
+          multiplataforma en Kotlin y desarrollo web. Puedes ver el código y los
+          detalles en mi
+          <a href="https://github.com/IvaBagba" target="_blank" rel="noopener noreferrer">
+            perfil de GitHub
+          </a>.
+        </p>
+      </section>
+      <a class="btn-more page-action" href="./projects.html">Explorar proyectos</a>
     </main>
+    <footer>
+      <p>&copy; 2026 Ivan Baguena</p>
+      <div class="footerSocials">
+        <a href="https://github.com/IvaBagba" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/ivabagba" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:baguena.delabandera.ivan@gmail.com">Email</a>
+      </div>
+    </footer>
   </body>
 </html>
