@@ -1,7 +1,8 @@
 # Portfolio de Ivan Baguena
 
 Portfolio web estático en español con navegación animada entre secciones,
-efectos de entrada y una selección de proyectos públicos de GitHub.
+efectos de entrada, carruseles interactivos de áreas de desarrollo y proyectos
+públicos de GitHub.
 
 El formulario de contacto prepara un mensaje dirigido a
 `baguena.delabandera.ivan@gmail.com` y abre la aplicación de correo del visitante.

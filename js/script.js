@@ -3,6 +3,7 @@ const sectionLinks = document.querySelectorAll('a[href^="#"]');
 const sections = document.querySelectorAll(".page-section[id]");
 const revealElements = document.querySelectorAll("[data-reveal]");
 const emailForms = document.querySelectorAll("[data-email-form]");
+const carousels = document.querySelectorAll("[data-carousel]");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 let activeScrollFrame = 0;
@@ -127,6 +128,62 @@ if ("IntersectionObserver" in window) {
 } else {
   revealElements.forEach((element) => element.classList.add("is-visible"));
 }
+
+carousels.forEach((carousel) => {
+  const viewport = carousel.querySelector("[data-carousel-viewport]");
+  const previousButton = carousel.querySelector("[data-carousel-prev]");
+  const nextButton = carousel.querySelector("[data-carousel-next]");
+  const status = carousel.querySelector("[data-carousel-status]");
+
+  if (!(viewport instanceof HTMLElement) ||
+      !(previousButton instanceof HTMLButtonElement) ||
+      !(nextButton instanceof HTMLButtonElement)) {
+    return;
+  }
+
+  function updateControls() {
+    const maxScroll = viewport.scrollWidth - viewport.clientWidth;
+    const atStart = viewport.scrollLeft <= 2;
+    const atEnd = viewport.scrollLeft >= maxScroll - 2;
+
+    previousButton.disabled = atStart;
+    nextButton.disabled = atEnd;
+
+    if (status) {
+      const cards = Array.from(viewport.querySelectorAll(".carousel-track > *"));
+      const firstCard = cards[0];
+      const gap = Number.parseFloat(
+        getComputedStyle(viewport.querySelector(".carousel-track")).columnGap,
+      ) || 0;
+      const step = firstCard ? firstCard.getBoundingClientRect().width + gap : 1;
+      const currentCard = Math.min(
+        Math.round(viewport.scrollLeft / step) + 1,
+        cards.length,
+      );
+      status.textContent = `${String(Math.max(currentCard, 1)).padStart(2, "0")} / ${String(cards.length).padStart(2, "0")}`;
+    }
+  }
+
+  function scrollByCard(direction) {
+    const card = viewport.querySelector(".carousel-track > *");
+    if (!card) return;
+
+    const styles = getComputedStyle(viewport.querySelector(".carousel-track"));
+    const gap = Number.parseFloat(styles.columnGap) || 0;
+    const distance = card.getBoundingClientRect().width + gap;
+
+    viewport.scrollBy({
+      left: distance * direction,
+      behavior: reducedMotion.matches ? "auto" : "smooth",
+    });
+  }
+
+  previousButton.addEventListener("click", () => scrollByCard(-1));
+  nextButton.addEventListener("click", () => scrollByCard(1));
+  viewport.addEventListener("scroll", updateControls, { passive: true });
+  window.addEventListener("resize", updateControls);
+  updateControls();
+});
 
 emailForms.forEach((form) => {
   form.addEventListener("submit", (event) => {

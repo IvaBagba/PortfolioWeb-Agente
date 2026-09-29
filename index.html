@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="css/projectCards.css" />
+    <link rel="stylesheet" href="css/carousel.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -107,25 +108,40 @@
               plataformas.
             </p>
           </div>
-          <div class="expertise-grid">
-            <article class="expertise-card">
-              <span class="expertise-number">01</span>
-              <i class="fas fa-server" aria-hidden="true"></i>
-              <h3>Backend</h3>
-              <p>Servicios y lógica de aplicación con foco en claridad y fiabilidad.</p>
-            </article>
-            <article class="expertise-card">
-              <span class="expertise-number">02</span>
-              <i class="fas fa-laptop-code" aria-hidden="true"></i>
-              <h3>Desarrollo web</h3>
-              <p>Interfaces cuidadas, accesibles y adaptables a cada pantalla.</p>
-            </article>
-            <article class="expertise-card">
-              <span class="expertise-number">03</span>
-              <i class="fas fa-mobile-alt" aria-hidden="true"></i>
-              <h3>Multiplataforma</h3>
-              <p>Aplicaciones que llevan una misma idea a más dispositivos.</p>
-            </article>
+          <div class="carousel" data-carousel>
+            <div class="carousel-viewport" data-carousel-viewport role="region" aria-roledescription="carrusel" tabindex="0" aria-label="Áreas de desarrollo">
+              <div class="expertise-grid carousel-track">
+                <article class="expertise-card">
+                  <span class="expertise-number">01</span>
+                  <i class="fas fa-server" aria-hidden="true"></i>
+                  <h3>Backend</h3>
+                  <p>Servicios y lógica de aplicación con foco en claridad y fiabilidad.</p>
+                </article>
+                <article class="expertise-card">
+                  <span class="expertise-number">02</span>
+                  <i class="fas fa-laptop-code" aria-hidden="true"></i>
+                  <h3>Desarrollo web</h3>
+                  <p>Interfaces cuidadas, accesibles y adaptables a cada pantalla.</p>
+                </article>
+                <article class="expertise-card">
+                  <span class="expertise-number">03</span>
+                  <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                  <h3>Multiplataforma</h3>
+                  <p>Aplicaciones que llevan una misma idea a más dispositivos.</p>
+                </article>
+              </div>
+            </div>
+            <div class="carousel-controls">
+              <p class="carousel-status" data-carousel-status aria-live="polite"></p>
+              <div class="carousel-buttons">
+                <button class="carousel-button" type="button" data-carousel-prev aria-label="Área anterior" disabled>
+                  <span aria-hidden="true">←</span>
+                </button>
+                <button class="carousel-button" type="button" data-carousel-next aria-label="Área siguiente">
+                  <span aria-hidden="true">→</span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -141,73 +157,88 @@
               Ver selección completa <span aria-hidden="true">↗</span>
             </a>
           </div>
-          <div class="project-grid">
-            <article class="project-tile">
-              <div class="project-tile-top">
-                <span>Aplicación multiplataforma</span>
-                <span class="project-arrow" aria-hidden="true">↗</span>
+          <div class="carousel" data-carousel>
+            <div class="carousel-viewport" data-carousel-viewport role="region" aria-roledescription="carrusel" tabindex="0" aria-label="Proyectos seleccionados">
+              <div class="project-grid carousel-track">
+                <article class="project-tile">
+                  <div class="project-tile-top">
+                    <span>Aplicación multiplataforma</span>
+                    <span class="project-arrow" aria-hidden="true">↗</span>
+                  </div>
+                  <h3>Eventide App</h3>
+                  <p>
+                    Aplicación Compose Multiplatform para Android, iOS, web y
+                    escritorio, conectada al backend Eventide API.
+                  </p>
+                  <div class="project_tags" aria-label="Tecnologías">
+                    <span>Kotlin</span>
+                    <span>Compose</span>
+                  </div>
+                  <a
+                    class="project-card-link"
+                    href="https://github.com/IvaBagba/Eventide_App"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Ver Eventide App en GitHub"
+                  ></a>
+                </article>
+                <article class="project-tile">
+                  <div class="project-tile-top">
+                    <span>Servicios y backend</span>
+                    <span class="project-arrow" aria-hidden="true">↗</span>
+                  </div>
+                  <h3>Eventide API</h3>
+                  <p>
+                    Proyecto backend Java que acompaña a la aplicación Eventide y
+                    forma parte de mi proyecto final.
+                  </p>
+                  <div class="project_tags" aria-label="Tecnologías">
+                    <span>Java</span>
+                    <span>API</span>
+                  </div>
+                  <a
+                    class="project-card-link"
+                    href="https://github.com/IvaBagba/Eventide_Api"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Ver Eventide API en GitHub"
+                  ></a>
+                </article>
+                <article class="project-tile">
+                  <div class="project-tile-top">
+                    <span>Desarrollo backend</span>
+                    <span class="project-arrow" aria-hidden="true">↗</span>
+                  </div>
+                  <h3>PokeCardApi</h3>
+                  <p>
+                    API desarrollada con Java y Spring Boot como proyecto
+                    independiente.
+                  </p>
+                  <div class="project_tags" aria-label="Tecnologías">
+                    <span>Java</span>
+                    <span>Spring Boot</span>
+                  </div>
+                  <a
+                    class="project-card-link"
+                    href="https://github.com/IvaBagba/PokeCardApi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Ver PokeCardApi en GitHub"
+                  ></a>
+                </article>
               </div>
-              <h3>Eventide App</h3>
-              <p>
-                Aplicación Compose Multiplatform para Android, iOS, web y
-                escritorio, conectada al backend Eventide API.
-              </p>
-              <div class="project_tags" aria-label="Tecnologías">
-                <span>Kotlin</span>
-                <span>Compose</span>
+            </div>
+            <div class="carousel-controls">
+              <p class="carousel-status" data-carousel-status aria-live="polite"></p>
+              <div class="carousel-buttons">
+                <button class="carousel-button" type="button" data-carousel-prev aria-label="Proyecto anterior" disabled>
+                  <span aria-hidden="true">←</span>
+                </button>
+                <button class="carousel-button" type="button" data-carousel-next aria-label="Proyecto siguiente">
+                  <span aria-hidden="true">→</span>
+                </button>
               </div>
-              <a
-                class="project-card-link"
-                href="https://github.com/IvaBagba/Eventide_App"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Ver Eventide App en GitHub"
-              ></a>
-            </article>
-            <article class="project-tile">
-              <div class="project-tile-top">
-                <span>Servicios y backend</span>
-                <span class="project-arrow" aria-hidden="true">↗</span>
-              </div>
-              <h3>Eventide API</h3>
-              <p>
-                Proyecto backend Java que acompaña a la aplicación Eventide y
-                forma parte de mi proyecto final.
-              </p>
-              <div class="project_tags" aria-label="Tecnologías">
-                <span>Java</span>
-                <span>API</span>
-              </div>
-              <a
-                class="project-card-link"
-                href="https://github.com/IvaBagba/Eventide_Api"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Ver Eventide API en GitHub"
-              ></a>
-            </article>
-            <article class="project-tile">
-              <div class="project-tile-top">
-                <span>Desarrollo backend</span>
-                <span class="project-arrow" aria-hidden="true">↗</span>
-              </div>
-              <h3>PokeCardApi</h3>
-              <p>
-                API desarrollada con Java y Spring Boot como proyecto
-                independiente.
-              </p>
-              <div class="project_tags" aria-label="Tecnologías">
-                <span>Java</span>
-                <span>Spring Boot</span>
-              </div>
-              <a
-                class="project-card-link"
-                href="https://github.com/IvaBagba/PokeCardApi"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Ver PokeCardApi en GitHub"
-              ></a>
-            </article>
+            </div>
           </div>
         </div>
       </section>
