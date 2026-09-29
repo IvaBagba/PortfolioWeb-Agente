@@ -1,17 +1,174 @@
+.project_sec {
+  margin: 5rem 0;
+}
+
+.project_sec h3 {
+  font-weight: 300;
+  color: #a0a0a0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
 .project_card {
+  position: relative;
+  width: 100%;
+  min-height: 450px;
+  border-radius: 16px;
+
+  background-image: url("https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+
   display: flex;
-  flex-wrap: wrap;
+  align-items: flex-end;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.project_card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 3px;
+  background: var(--vice-city-gradient);
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.project_card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px -5px rgba(255, 42, 122, 0.3);
+}
+
+.project_card:hover::after {
+  opacity: 1; /* Muestra el borde */
+}
+
+.project_overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+
+  background: linear-gradient(
+    to top,
+    rgba (13, 14, 21, 1) 0%,
+    rgba(13, 14, 21, 0.4) 50%,
+    transparent 100%
+  );
+}
+.project_content {
+  position: relative;
+  z-index: 2; /* Para que el texto esté por encima de la capa oscura */
+  padding: 3rem;
+  width: 100%;
+}
+
+.project_content h4 {
+  font-size: 2rem;
+  font-weight: 900;
+  font-style: italic;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.project_content p {
+  color: #d0d0d0;
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+}
+
+/* Etiquetas (Java, MySQL, etc.) */
+.project_tags {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.project_tags span {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 0.4rem 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px); /* Efecto cristal */
+  border-radius: 50px;
+  color: var(--gta-orange);
+}
+
+/* =========================================
+   NUEVO BOTÓN VER DETALLES (Minimalista con flecha)
+   ========================================= */
+.btn-card {
+  display: inline-flex;
+  align-items: center;
+  color: #ffffff;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  transition: color 0.3s ease;
+}
+
+/* Añadimos una flecha automáticamente con CSS */
+.btn-card::after {
+  content: "→";
+  margin-left: 8px;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+/* Al pasar el ratón, el texto se vuelve rosa y la flecha avanza */
+.btn-card:hover {
+  color: var(--gta-pink);
+}
+
+.btn-card:hover::after {
+  transform: translateX(6px); /* Desplaza la flecha a la derecha */
+}
+
+/* =========================================
+   NUEVO BOTÓN "VER TODOS LOS PROYECTOS" (Neón sutil)
+   ========================================= */
+.more-projects-container {
+  margin-top: 3.5rem;
+  display: flex;
   justify-content: center;
-  gap: 20px;
-  width: fit-content;
-  min-width: 220px;
-  max-width: 100%;
-  height: auto;
-  max-height: 420px;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border: 1px solid #ddd;
-  box-sizing: border-box;
-  align-self: flex-start;
+}
+
+.btn-more {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: transparent;
+  color: var(--text-color);
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Borde fino gris */
+  border-radius: 4px; /* Bordes más afilados, menos redondos */
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+/* Hover: El borde brilla, pero no se rellena el fondo */
+.btn-more:hover {
+  border-color: var(--gta-pink);
+  color: #ffffff;
+  /* Brillo neón alrededor del botón */
+  box-shadow:
+    0 0 15px rgba(255, 42, 122, 0.4),
+    inset 0 0 10px rgba(255, 42, 122, 0.1);
+  transform: translateY(-2px);
 }
