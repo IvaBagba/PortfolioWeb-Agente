@@ -188,6 +188,26 @@ carousels.forEach((carousel) => {
   let manuallyPaused = false;
   let inView = !("IntersectionObserver" in window);
 
+  function getCurrentCardIndex() {
+    const viewportRect = viewport.getBoundingClientRect();
+    const viewportCenter = viewportRect.left + viewport.clientLeft + viewport.clientWidth / 2;
+    let closestIndex = 0;
+    let closestDistance = Number.POSITIVE_INFINITY;
+
+    cards.forEach((card, index) => {
+      const cardRect = card.getBoundingClientRect();
+      const cardCenter = cardRect.left + cardRect.width / 2;
+      const distance = Math.abs(cardCenter - viewportCenter);
+
+      if (distance < closestDistance) {
+        closestIndex = index;
+        closestDistance = distance;
+      }
+    });
+
+    return closestIndex;
+  }
+
   function updateControls() {
     const maxScroll = viewport.scrollWidth - viewport.clientWidth;
     const canScroll = cards.length > 1 && maxScroll > 2;
@@ -196,16 +216,7 @@ carousels.forEach((carousel) => {
     toggleButton.disabled = !canScroll || reducedMotion.matches;
 
     if (status) {
-      const firstCard = cards[0];
-      const gap = Number.parseFloat(
-        getComputedStyle(viewport.querySelector(".carousel-track")).columnGap,
-      ) || 0;
-      const step = firstCard ? firstCard.getBoundingClientRect().width + gap : 1;
-      const currentCard = Math.min(
-        Math.round(viewport.scrollLeft / step) + 1,
-        cards.length,
-      );
-      status.textContent = `${String(Math.max(currentCard, 1)).padStart(2, "0")} / ${String(cards.length).padStart(2, "0")}`;
+      status.textContent = `${String(getCurrentCardIndex() + 1).padStart(2, "0")} / ${String(cards.length).padStart(2, "0")}`;
     }
 
     cards.forEach((card, index) => {
@@ -216,17 +227,13 @@ carousels.forEach((carousel) => {
 
   function scrollToCard(direction) {
     if (cards.length < 2) return;
-    const currentCard = Number.parseInt(status?.textContent.split("/")[0] || "1", 10) - 1;
-    const nextCard = (currentCard + direction + cards.length) % cards.length;
-    const card = cards[nextCard];
-    const firstCard = cards[0];
-    const target = Math.min(
-      card.offsetLeft - firstCard.offsetLeft,
-      viewport.scrollWidth - viewport.clientWidth,
-    );
+    const nextCard = (getCurrentCardIndex() + direction + cards.length) % cards.length;
+    const viewportRect = viewport.getBoundingClientRect();
+    const cardRect = cards[nextCard].getBoundingClientRect();
+    const target = viewport.scrollLeft + cardRect.left - viewportRect.left - viewport.clientLeft;
 
     viewport.scrollTo({
-      left: Math.max(0, target),
+      left: Math.max(0, Math.min(target, viewport.scrollWidth - viewport.clientWidth)),
       behavior: reducedMotion.matches ? "auto" : "smooth",
     });
   }

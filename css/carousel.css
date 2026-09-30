@@ -51,11 +51,17 @@
 .projects-section .carousel-viewport {
   padding-left: clamp(1.25rem, 6vw, 6rem);
   padding-right: clamp(1.25rem, 6vw, 6rem);
+  scroll-padding-inline: clamp(1.25rem, 6vw, 6rem);
 }
 
 .projects-section .carousel-controls {
   padding-left: clamp(1.25rem, 6vw, 6rem);
   padding-right: clamp(1.25rem, 6vw, 6rem);
+}
+
+.projects-section .page-project-link {
+  display: inline-flex;
+  margin: 1.5rem clamp(1.25rem, 6vw, 6rem) 0;
 }
 
 .carousel-track > * {

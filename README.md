@@ -1,8 +1,9 @@
 # Portfolio de Ivan Baguena
 
-Portfolio web estático en español con navegación animada entre secciones,
-temas oscuro/claro, una red sutil de puntos conectados en movimiento y
-carruseles automáticos de tecnologías y proyectos.
+Portfolio web estático en español dividido en cuatro páginas: inicio, perfil y
+tecnologías, proyectos y contacto. La navegación enlaza las páginas, con
+desplazamiento animado entre las secciones del perfil, temas oscuro/claro, una
+red sutil de puntos conectados en movimiento y carruseles automáticos.
 
 El modo oscuro es el predeterminado. La preferencia de tema queda guardada en
 el navegador. Los carruseles avanzan automáticamente, se pausan al pasar el
@@ -29,11 +30,11 @@ El retrato principal se guarda localmente en
 `assets/ivan-baguena-linkedin.jpg`, así no depende de la URL temporal de LinkedIn.
 La imagen de muestra de la sección «Sobre mí» sigue en
 `assets/profile-placeholder-about.svg`; puedes sustituirla por otra foto o
-actualizar su ruta `src` en `index.html`.
+actualizar su ruta `src` en `pages/about.html`.
 
 ## Páginas
 
-- `index.html`: presentación y proyecto destacado.
-- `pages/about.html`: perfil y áreas de interés.
-- `pages/projects.html`: proyectos seleccionados.
+- `index.html`: presentación.
+- `pages/about.html`: perfil y áreas de desarrollo.
+- `pages/projects.html`: proyectos seleccionados en un carrusel.
 - `pages/contact.html`: email y perfiles profesionales.

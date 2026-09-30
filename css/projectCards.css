@@ -52,6 +52,7 @@
   transform: translate(2px, -2px);
 }
 
+.project-tile h2,
 .project-tile h3 {
   font-size: 1.65rem;
   margin: 2.8rem 0 0.7rem;
@@ -122,6 +123,10 @@
   font-size: 1.55rem;
   letter-spacing: -0.035em;
   margin: 2.2rem 0 0.7rem;
+}
+
+.projects-section .project-tile h2 {
+  letter-spacing: -0.035em;
 }
 
 .page-project-grid .project-tile > a:not(.project-card-link) {

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Proyectos públicos de Ivan Baguena en GitHub: backend, Kotlin Multiplatform y Java."
+      content="Proyectos de Ivan Baguena en GitHub: backend, Kotlin Multiplatform y Java."
     />
     <meta name="theme-color" content="#0d0e15" />
     <title>Proyectos | Ivan Baguena</title>
@@ -19,16 +19,16 @@
     <canvas class="background-network" data-network aria-hidden="true"></canvas>
     <header class="site-header">
       <nav class="mainNav" aria-label="Navegación principal">
-        <a class="brand-mark" href="../index.html#inicio" aria-label="Ivan Baguena, inicio">
+        <a class="brand-mark" href="../index.html" aria-label="Ivan Baguena, inicio">
           IB<span>.</span>
         </a>
         <div class="header-tools">
           <div class="nav-links">
-            <a href="../index.html#inicio">Inicio</a>
-            <a href="../index.html#sobre-mi">Sobre mí</a>
-            <a href="../index.html#enfoque">Stack</a>
-            <a href="../index.html#proyectos" aria-current="page">Proyectos</a>
-            <a class="nav-contact" href="../index.html#contacto">Contacto</a>
+            <a href="../index.html">Inicio</a>
+            <a href="./about.html#sobre-mi">Sobre mí</a>
+            <a href="./about.html#enfoque">Stack</a>
+            <a href="./projects.html" aria-current="page">Proyectos</a>
+            <a class="nav-contact" href="./contact.html">Contacto</a>
           </div>
           <button class="theme-toggle" type="button" data-theme-toggle aria-label="Cambiar a modo claro" title="Cambiar a modo claro">
             <span data-theme-icon aria-hidden="true">☼</span>
@@ -37,72 +37,118 @@
         </div>
       </nav>
     </header>
-    <main class="page-content" data-reveal>
-      <p class="eyebrow">Código y aprendizaje</p>
-      <h1>Proyectos</h1>
-      <p class="page-lead">
-        Una selección de proyectos públicos de mi perfil de GitHub. Las
-        descripciones y tecnologías se basan en la información disponible en
-        cada repositorio.
-      </p>
-      <section class="project-grid page-project-grid" aria-label="Proyectos de GitHub">
-        <article class="project-tile">
-          <p class="project_kicker">Kotlin · Multiplataforma</p>
-          <h2>Eventide App</h2>
-          <p>
-            Aplicación Compose Multiplatform para Android, iOS, web y escritorio,
-            asociada al backend Eventide API.
-          </p>
-          <div class="project_tags" aria-label="Tecnologías">
-            <span>Kotlin</span>
-            <span>Compose</span>
+
+    <main class="one-page">
+      <section class="page-section projects-section" id="proyectos" aria-labelledby="projects-title">
+        <div class="section-inner" data-reveal>
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">03 <span></span> Código y aprendizaje</p>
+              <h1 id="projects-title">Proyectos.</h1>
+            </div>
+            <p class="section-note">
+              Una selección de proyectos públicos. Desliza para ver cada uno y
+              abrir su repositorio.
+            </p>
           </div>
-          <a href="https://github.com/IvaBagba/Eventide_App" target="_blank" rel="noopener noreferrer">
-            Ver repositorio <span aria-hidden="true">→</span>
-          </a>
-        </article>
-        <article class="project-tile">
-          <p class="project_kicker">Java · Backend</p>
-          <h2>Eventide API</h2>
-          <p>
-            Proyecto backend Java que acompaña a la aplicación Eventide. El
-            repositorio forma parte de mi trabajo de proyecto final.
-          </p>
-          <div class="project_tags" aria-label="Tecnologías">
-            <span>Java</span>
-            <span>API</span>
+          <div class="carousel" data-carousel>
+            <div class="carousel-viewport" data-carousel-viewport role="region" aria-roledescription="carrusel" tabindex="0" aria-label="Proyectos de GitHub">
+              <div class="project-grid carousel-track">
+                <article class="project-tile">
+                  <div class="project-tile-top">
+                    <span>Kotlin · Multiplataforma</span>
+                    <span class="project-arrow" aria-hidden="true">↗</span>
+                  </div>
+                  <h2>Eventide App</h2>
+                  <p>
+                    Aplicación Compose Multiplatform para Android, iOS, web y
+                    escritorio, conectada al backend Eventide API.
+                  </p>
+                  <div class="project_tags" aria-label="Tecnologías">
+                    <span>Kotlin</span>
+                    <span>Compose</span>
+                  </div>
+                  <a
+                    class="project-card-link"
+                    href="https://github.com/IvaBagba/Eventide_App"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Ver Eventide App en GitHub"
+                  ></a>
+                </article>
+                <article class="project-tile">
+                  <div class="project-tile-top">
+                    <span>Java · Backend</span>
+                    <span class="project-arrow" aria-hidden="true">↗</span>
+                  </div>
+                  <h2>Eventide API</h2>
+                  <p>
+                    Proyecto backend Java que acompaña a la aplicación Eventide
+                    y forma parte de mi proyecto final.
+                  </p>
+                  <div class="project_tags" aria-label="Tecnologías">
+                    <span>Java</span>
+                    <span>API</span>
+                  </div>
+                  <a
+                    class="project-card-link"
+                    href="https://github.com/IvaBagba/Eventide_Api"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Ver Eventide API en GitHub"
+                  ></a>
+                </article>
+                <article class="project-tile">
+                  <div class="project-tile-top">
+                    <span>Java · Spring Boot</span>
+                    <span class="project-arrow" aria-hidden="true">↗</span>
+                  </div>
+                  <h2>PokeCardApi</h2>
+                  <p>
+                    API desarrollada con Java y Spring Boot como proyecto
+                    independiente.
+                  </p>
+                  <div class="project_tags" aria-label="Tecnologías">
+                    <span>Java</span>
+                    <span>Spring Boot</span>
+                  </div>
+                  <a
+                    class="project-card-link"
+                    href="https://github.com/IvaBagba/PokeCardApi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Ver PokeCardApi en GitHub"
+                  ></a>
+                </article>
+              </div>
+            </div>
+            <div class="carousel-progress" aria-hidden="true"><span></span></div>
+            <div class="carousel-controls">
+              <p class="carousel-status" data-carousel-status aria-live="off"></p>
+              <div class="carousel-buttons">
+                <button class="carousel-button" type="button" data-carousel-prev aria-label="Proyecto anterior">
+                  <span aria-hidden="true">←</span>
+                </button>
+                <button class="carousel-button" type="button" data-carousel-next aria-label="Proyecto siguiente">
+                  <span aria-hidden="true">→</span>
+                </button>
+                <button class="carousel-button carousel-play" type="button" data-carousel-toggle aria-label="Pausar carrusel" title="Pausar carrusel">
+                  <span data-carousel-toggle-icon aria-hidden="true">Ⅱ</span>
+                </button>
+              </div>
+            </div>
           </div>
-          <a href="https://github.com/IvaBagba/Eventide_Api" target="_blank" rel="noopener noreferrer">
-            Ver repositorio <span aria-hidden="true">→</span>
+          <a class="text-link page-project-link" href="https://github.com/IvaBagba" target="_blank" rel="noopener noreferrer">
+            Ver todos mis repositorios <span aria-hidden="true">↗</span>
           </a>
-        </article>
-        <article class="project-tile">
-          <p class="project_kicker">Java · Spring Boot</p>
-          <h2>PokeCardApi</h2>
-          <p>
-            API desarrollada con Spring Boot y Java, publicada en GitHub como
-            proyecto independiente.
-          </p>
-          <div class="project_tags" aria-label="Tecnologías">
-            <span>Java</span>
-            <span>Spring Boot</span>
-          </div>
-          <a href="https://github.com/IvaBagba/PokeCardApi" target="_blank" rel="noopener noreferrer">
-            Ver repositorio <span aria-hidden="true">→</span>
-          </a>
-        </article>
+        </div>
       </section>
-      <a class="btn-more page-action" href="https://github.com/IvaBagba" target="_blank" rel="noopener noreferrer">
-        Ver todos mis repositorios
-      </a>
     </main>
-    <footer>
+
+    <footer class="site-footer">
+      <a class="footer-brand" href="../index.html">IB<span>.</span></a>
       <p>&copy; 2026 Ivan Baguena</p>
-      <div class="footerSocials">
-        <a href="https://github.com/IvaBagba" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://www.linkedin.com/in/ivabagba" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="mailto:baguena.delabandera.ivan@gmail.com">Email</a>
-      </div>
+      <a href="../index.html">Volver al inicio <span aria-hidden="true">↑</span></a>
     </footer>
     <script src="../js/background.js" defer></script>
     <script src="../js/script.js" defer></script>
