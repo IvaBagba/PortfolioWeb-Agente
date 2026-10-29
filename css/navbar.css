@@ -1,6 +1,4 @@
 .site-header {
-  -webkit-backdrop-filter: blur(18px);
-  backdrop-filter: blur(18px);
   background: var(--header-background);
   border-bottom: 1px solid var(--line-color);
   height: var(--header-height);
@@ -15,24 +13,19 @@
   height: 100%;
   justify-content: space-between;
   margin: 0 auto;
-  max-width: 1440px;
-  padding: 0 clamp(1.25rem, 6vw, 6rem);
+  max-width: 1600px;
+  padding: 0 clamp(1.25rem, 5vw, 5rem);
 }
 
 .brand-mark {
   color: var(--text-color);
-  font-size: 1.2rem;
-  font-weight: 750;
-  letter-spacing: -0.07em;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  letter-spacing: -0.08em;
   text-decoration: none;
 }
 
 .brand-mark span {
-  color: var(--gta-pink);
-  transition: color 450ms ease;
-}
-
-.brand-mark:hover span {
   color: var(--accent-strong);
 }
 
@@ -45,16 +38,16 @@
 .nav-links {
   align-items: center;
   display: flex;
-  gap: clamp(1.2rem, 3vw, 2.6rem);
+  gap: clamp(1rem, 2.5vw, 2.2rem);
 }
 
 .nav-links a {
   color: var(--muted-color);
-  font-size: 0.77rem;
-  font-weight: 550;
+  font-size: 0.72rem;
+  letter-spacing: 0.035em;
   position: relative;
   text-decoration: none;
-  transition: color 450ms ease;
+  transition: color 250ms ease;
 }
 
 .nav-links a:hover,
@@ -65,55 +58,50 @@
 
 .nav-links a[aria-current="location"]::after,
 .nav-links a[aria-current="page"]::after {
-  background: var(--accent-gradient);
-  bottom: -0.55rem;
+  animation: nav-underline-in 500ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
+  background: var(--accent-color);
+  bottom: -0.7rem;
   content: "";
-  height: 2px;
+  height: 1px;
   left: 0;
   position: absolute;
   width: 100%;
-  animation: nav-underline-in 650ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
 }
 
 .nav-links .nav-contact {
-  border: 1px solid rgba(235, 228, 242, 0.25);
-  border-radius: 4px;
+  border: 1px solid var(--line-color);
   color: var(--text-color);
-  padding: 0.65rem 0.9rem;
+  padding: 0.62rem 0.85rem;
 }
 
 .nav-links .nav-contact:hover {
-  background: var(--accent-gradient);
-  border-color: transparent;
-  color: #fff;
+  background: var(--card-background);
+  border-color: var(--accent-color);
 }
 
 .theme-toggle {
   align-items: center;
   background: transparent;
   border: 1px solid var(--line-color);
-  border-radius: 999px;
   color: var(--muted-color);
   cursor: pointer;
   display: inline-flex;
   font: inherit;
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   gap: 0.45rem;
   justify-content: center;
   min-height: 36px;
   padding: 0.35rem 0.65rem;
   transition:
-    background-color 350ms ease,
-    border-color 350ms ease,
-    color 350ms ease,
-    transform 450ms cubic-bezier(0.2, 0.75, 0.25, 1);
+    background-color 250ms ease,
+    border-color 250ms ease,
+    color 250ms ease;
 }
 
 .theme-toggle:hover {
   background: var(--card-background);
   border-color: var(--accent-color);
   color: var(--text-color);
-  transform: translateY(-1px);
 }
 
 .theme-toggle [data-theme-icon] {
@@ -125,7 +113,7 @@
 @keyframes nav-underline-in {
   from {
     opacity: 0;
-    transform: scaleX(0.4);
+    transform: scaleX(0.5);
     transform-origin: left;
   }
 
@@ -136,18 +124,15 @@
   }
 }
 
-@media (max-width: 520px) {
-  :root {
-    --header-height: 68px;
-  }
-
+@media (max-width: 760px) {
   .mainNav {
-    gap: 0.75rem;
-    padding: 0 1rem;
+    gap: 0.45rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .header-tools {
-    gap: 0.55rem;
+    gap: 0.45rem;
   }
 
   .nav-links {
@@ -155,48 +140,44 @@
   }
 
   .nav-links a {
-    font-size: 0.68rem;
+    font-size: 0.64rem;
+    white-space: nowrap;
   }
 
   .nav-links .nav-contact {
-    padding: 0.55rem 0.65rem;
+    padding: 0.45rem 0.5rem;
   }
 
   .theme-toggle {
-    height: 32px;
-    min-height: 32px;
-    padding: 0.3rem 0.45rem;
-  }
-}
-
-@media (max-width: 370px) {
-  .mainNav {
-    gap: 0.4rem;
-    padding: 0 0.65rem;
-  }
-
-  .header-tools {
-    gap: 0.4rem;
-  }
-
-  .nav-links {
-    gap: 0.4rem;
-  }
-
-  .nav-links a {
-    font-size: 0.58rem;
-  }
-
-  .nav-links .nav-contact {
-    padding: 0.45rem 0.4rem;
-  }
-
-  .theme-toggle {
-    gap: 0;
-    width: 30px;
+    min-height: 34px;
+    padding: 0.3rem;
+    width: 34px;
   }
 
   .theme-toggle [data-theme-label] {
     display: none;
+  }
+}
+
+@media (max-width: 390px) {
+  .mainNav {
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+  }
+
+  .brand-mark {
+    font-size: 1.1rem;
+  }
+
+  .nav-links {
+    gap: 0.45rem;
+  }
+
+  .nav-links a {
+    font-size: 0.59rem;
+  }
+
+  .nav-links .nav-contact {
+    padding: 0.4rem 0.38rem;
   }
 }

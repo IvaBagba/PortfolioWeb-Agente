@@ -1,24 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" fill="none">
-  <defs>
-    <linearGradient id="background" x1="34" y1="22" x2="842" y2="575" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#211d2a"/>
-      <stop offset=".56" stop-color="#17141e"/>
-      <stop offset="1" stop-color="#301a2b"/>
-    </linearGradient>
-    <linearGradient id="silhouette" x1="386" y1="180" x2="566" y2="596" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#ff72a8" stop-opacity=".65"/>
-      <stop offset="1" stop-color="#a855f7" stop-opacity=".16"/>
-    </linearGradient>
-    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="matrix(332 254 -220 288 700 173)" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#a855f7" stop-opacity=".22"/>
-      <stop offset="1" stop-color="#a855f7" stop-opacity="0"/>
-    </radialGradient>
-  </defs>
-  <path fill="url(#background)" d="M0 0h900v600H0z"/>
-  <path fill="url(#glow)" d="M0 0h900v600H0z"/>
-  <circle cx="475" cy="241" r="83" fill="url(#silhouette)"/>
-  <path fill="url(#silhouette)" d="M289 600c12-134 75-236 186-236s174 102 186 236H289Z"/>
+  <path fill="#202526" d="M0 0h900v600H0z"/>
+  <circle cx="475" cy="241" r="83" fill="#9cb0ad" fill-opacity=".72"/>
+  <path fill="#9cb0ad" fill-opacity=".72" d="M289 600c12-134 75-236 186-236s174 102 186 236H289Z"/>
   <path stroke="#fff" stroke-opacity=".16" d="M24 24h852v552H24z"/>
-  <path stroke="#ff72a8" stroke-opacity=".38" d="M40 96V40h56M860 504v56h-56"/>
+  <path stroke="#9cb0ad" stroke-opacity=".62" d="M40 96V40h56M860 504v56h-56"/>
   <text x="50%" y="92%" fill="#fff" fill-opacity=".78" font-family="Arial, sans-serif" font-size="16" letter-spacing="3" text-anchor="middle">TU FOTO, TU HISTORIA</text>
 </svg>

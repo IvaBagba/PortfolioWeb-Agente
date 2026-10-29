@@ -7,7 +7,7 @@
       name="description"
       content="Proyectos de Ivan Baguena en GitHub: backend, Kotlin Multiplatform y Java."
     />
-    <meta name="theme-color" content="#0d0e15" />
+    <meta name="theme-color" content="#171a1b" />
     <title>Proyectos | Ivan Baguena</title>
     <script src="../js/theme.js"></script>
     <link rel="stylesheet" href="../css/styles.css" />
@@ -17,6 +17,16 @@
   </head>
   <body>
     <canvas class="background-network" data-network aria-hidden="true"></canvas>
+    <svg class="icon-definitions" aria-hidden="true" focusable="false">
+      <symbol id="icon-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" /></symbol>
+      <symbol id="icon-arrow-left" viewBox="0 0 24 24"><path d="m14 18-6-6 6-6M8 12h12" /></symbol>
+      <symbol id="icon-arrow-right" viewBox="0 0 24 24"><path d="m10 18 6-6-6-6M16 12H4" /></symbol>
+      <symbol id="icon-arrow-up" viewBox="0 0 24 24"><path d="m18 14-6-6-6 6M12 8v12" /></symbol>
+      <symbol id="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" /></symbol>
+      <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M20.4 15.2A8.5 8.5 0 0 1 8.8 3.6 8.5 8.5 0 1 0 20.4 15.2Z" /></symbol>
+      <symbol id="icon-pause" viewBox="0 0 24 24"><path d="M9 5v14m6-14v14" /></symbol>
+      <symbol id="icon-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7z" /></symbol>
+    </svg>
     <header class="site-header">
       <nav class="mainNav" aria-label="Navegación principal">
         <a class="brand-mark" href="../index.html" aria-label="Ivan Baguena, inicio">
@@ -24,14 +34,13 @@
         </a>
         <div class="header-tools">
           <div class="nav-links">
-            <a href="../index.html">Inicio</a>
             <a href="./about.html#sobre-mi">Sobre mí</a>
             <a href="./about.html#enfoque">Stack</a>
             <a href="./projects.html" aria-current="page">Proyectos</a>
             <a class="nav-contact" href="./contact.html">Contacto</a>
           </div>
           <button class="theme-toggle" type="button" data-theme-toggle aria-label="Cambiar a modo claro" title="Cambiar a modo claro">
-            <span data-theme-icon aria-hidden="true">☼</span>
+            <span data-theme-icon aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-sun"></use></svg></span>
             <span data-theme-label>Claro</span>
           </button>
         </div>
@@ -43,7 +52,6 @@
         <div class="section-inner" data-reveal>
           <div class="section-heading">
             <div>
-              <p class="eyebrow">03 <span></span> Código y aprendizaje</p>
               <h1 id="projects-title">Proyectos.</h1>
             </div>
             <p class="section-note">
@@ -57,7 +65,7 @@
                 <article class="project-tile">
                   <div class="project-tile-top">
                     <span>Kotlin · Multiplataforma</span>
-                    <span class="project-arrow" aria-hidden="true">↗</span>
+                    <svg class="project-arrow" aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-arrow-up-right"></use></svg>
                   </div>
                   <h2>Eventide App</h2>
                   <p>
@@ -79,7 +87,7 @@
                 <article class="project-tile">
                   <div class="project-tile-top">
                     <span>Java · Backend</span>
-                    <span class="project-arrow" aria-hidden="true">↗</span>
+                    <svg class="project-arrow" aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-arrow-up-right"></use></svg>
                   </div>
                   <h2>Eventide API</h2>
                   <p>
@@ -101,7 +109,7 @@
                 <article class="project-tile">
                   <div class="project-tile-top">
                     <span>Java · Spring Boot</span>
-                    <span class="project-arrow" aria-hidden="true">↗</span>
+                    <svg class="project-arrow" aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-arrow-up-right"></use></svg>
                   </div>
                   <h2>PokeCardApi</h2>
                   <p>
@@ -127,19 +135,19 @@
               <p class="carousel-status" data-carousel-status aria-live="off"></p>
               <div class="carousel-buttons">
                 <button class="carousel-button" type="button" data-carousel-prev aria-label="Proyecto anterior">
-                  <span aria-hidden="true">←</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-arrow-left"></use></svg>
                 </button>
                 <button class="carousel-button" type="button" data-carousel-next aria-label="Proyecto siguiente">
-                  <span aria-hidden="true">→</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-arrow-right"></use></svg>
                 </button>
                 <button class="carousel-button carousel-play" type="button" data-carousel-toggle aria-label="Pausar carrusel" title="Pausar carrusel">
-                  <span data-carousel-toggle-icon aria-hidden="true">Ⅱ</span>
+                  <svg data-carousel-toggle-icon aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-pause"></use></svg>
                 </button>
               </div>
             </div>
           </div>
           <a class="text-link page-project-link" href="https://github.com/IvaBagba" target="_blank" rel="noopener noreferrer">
-            Ver todos mis repositorios <span aria-hidden="true">↗</span>
+            Ver todos mis repositorios <svg class="inline-icon" aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-arrow-up-right"></use></svg>
           </a>
         </div>
       </section>
@@ -148,7 +156,7 @@
     <footer class="site-footer">
       <a class="footer-brand" href="../index.html">IB<span>.</span></a>
       <p>&copy; 2026 Ivan Baguena</p>
-      <a href="../index.html">Volver al inicio <span aria-hidden="true">↑</span></a>
+      <a href="../index.html">Volver al inicio <svg class="inline-icon" aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-arrow-up"></use></svg></a>
     </footer>
     <script src="../js/background.js" defer></script>
     <script src="../js/script.js" defer></script>

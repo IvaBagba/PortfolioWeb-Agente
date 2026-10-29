@@ -8,6 +8,10 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const themeToggles = document.querySelectorAll("[data-theme-toggle]");
 const themeMeta = document.querySelector('meta[name="theme-color"]');
 
+function updateIcon(element, iconName) {
+  element?.querySelector("use")?.setAttribute("href", `#icon-${iconName}`);
+}
+
 function updateThemeControls(theme) {
   const isDark = theme === "dark";
 
@@ -17,10 +21,10 @@ function updateThemeControls(theme) {
     button.setAttribute("aria-label", action);
     button.setAttribute("title", action);
     button.querySelector("[data-theme-label]")?.replaceChildren(label);
-    button.querySelector("[data-theme-icon]")?.replaceChildren(isDark ? "☼" : "☾");
+    updateIcon(button.querySelector("[data-theme-icon]"), isDark ? "sun" : "moon");
   });
 
-  if (themeMeta) themeMeta.setAttribute("content", isDark ? "#0d0e15" : "#f7f5f8");
+  if (themeMeta) themeMeta.setAttribute("content", isDark ? "#171a1b" : "#f0eee7");
 }
 
 updateThemeControls(document.documentElement.dataset.theme || "dark");
@@ -230,7 +234,9 @@ carousels.forEach((carousel) => {
     const nextCard = (getCurrentCardIndex() + direction + cards.length) % cards.length;
     const viewportRect = viewport.getBoundingClientRect();
     const cardRect = cards[nextCard].getBoundingClientRect();
-    const target = viewport.scrollLeft + cardRect.left - viewportRect.left - viewport.clientLeft;
+    const scrollInset = Number.parseFloat(getComputedStyle(viewport).paddingLeft) || 0;
+    const target = viewport.scrollLeft + cardRect.left - viewportRect.left -
+      viewport.clientLeft - scrollInset;
 
     viewport.scrollTo({
       left: Math.max(0, Math.min(target, viewport.scrollWidth - viewport.clientWidth)),
@@ -260,7 +266,7 @@ carousels.forEach((carousel) => {
       : `${action} reproducción automática`;
     toggleButton.setAttribute("aria-label", label);
     toggleButton.setAttribute("title", label);
-    if (toggleIcon) toggleIcon.textContent = manuallyPaused || reducedMotion.matches ? "▶" : "Ⅱ";
+    updateIcon(toggleIcon, manuallyPaused || reducedMotion.matches ? "play" : "pause");
     if (progress) progress.setAttribute("aria-hidden", "true");
   }
 

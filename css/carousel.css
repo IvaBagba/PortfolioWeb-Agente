@@ -6,79 +6,98 @@
   max-width: 700px;
   overflow-x: auto;
   overscroll-behavior-inline: contain;
-  scrollbar-width: none;
-  scroll-snap-type: x mandatory;
+  scrollbar-color: var(--subtle-color) transparent;
+  scrollbar-width: thin;
   scroll-behavior: auto;
+  scroll-snap-type: x mandatory;
   touch-action: pan-x pan-y;
   -webkit-overflow-scrolling: touch;
 }
 
 .carousel-viewport::-webkit-scrollbar {
-  display: none;
+  height: 5px;
+}
+
+.carousel-viewport::-webkit-scrollbar-thumb {
+  background: var(--subtle-color);
 }
 
 .carousel-track {
+  display: flex;
   gap: 1rem;
   padding: 0.25rem 0 1rem;
   width: max-content;
-}
-
-.project-grid {
-  gap: 1rem;
-}
-
-.projects-section .carousel-viewport {
-  max-width: none;
-}
-
-.projects-section {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.projects-section .section-inner {
-  max-width: 1680px;
-}
-
-.projects-section .section-heading {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1680px;
-  padding-left: clamp(1.25rem, 6vw, 6rem);
-  padding-right: clamp(1.25rem, 6vw, 6rem);
-}
-
-.projects-section .carousel-viewport {
-  padding-left: clamp(1.25rem, 6vw, 6rem);
-  padding-right: clamp(1.25rem, 6vw, 6rem);
-  scroll-padding-inline: clamp(1.25rem, 6vw, 6rem);
-}
-
-.projects-section .carousel-controls {
-  padding-left: clamp(1.25rem, 6vw, 6rem);
-  padding-right: clamp(1.25rem, 6vw, 6rem);
-}
-
-.projects-section .page-project-link {
-  display: inline-flex;
-  margin: 1.5rem clamp(1.25rem, 6vw, 6rem) 0;
 }
 
 .carousel-track > * {
   scroll-snap-align: start;
 }
 
+.expertise-grid {
+  display: flex;
+}
+
+.expertise-card {
+  background: var(--surface-color);
+  border: 1px solid var(--line-color);
+  flex: 0 0 min(700px, calc(100vw - clamp(2.5rem, 14vw, 14rem)));
+  min-height: 290px;
+  padding: 1.6rem;
+  position: relative;
+  transition:
+    border-color 300ms ease,
+    transform 400ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.expertise-card:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-3px);
+}
+
+.expertise-card h3 {
+  font-size: 1.55rem;
+  font-weight: 400;
+  margin: 3.8rem 0 0.7rem;
+}
+
+.expertise-card p {
+  font-size: 0.87rem;
+  margin-bottom: 0;
+  max-width: 38ch;
+}
+
+.expertise-tags,
+.project_tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 1.15rem;
+}
+
+.expertise-tags span,
+.project_tags span {
+  background: var(--tag-background);
+  border: 1px solid var(--tag-border);
+  color: var(--tag-color);
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  padding: 0.38rem 0.55rem;
+  text-transform: uppercase;
+}
+
 .carousel-progress {
   background: var(--line-color);
   height: 1px;
-  margin-top: 0.25rem;
+  margin: 0.25rem auto 0;
+  max-width: var(--page-width);
   overflow: hidden;
   position: relative;
   width: 100%;
 }
 
 .carousel-progress span {
-  background: var(--accent-gradient);
+  background: var(--accent-color);
   display: block;
   height: 100%;
   transform: scaleX(0);
@@ -104,7 +123,8 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
-  margin-top: 1.1rem;
+  margin: 1.1rem auto 0;
+  max-width: var(--page-width);
 }
 
 .carousel-status {
@@ -123,26 +143,25 @@
   align-items: center;
   background: transparent;
   border: 1px solid var(--line-color);
-  border-radius: 50%;
   color: var(--text-color);
   cursor: pointer;
   display: inline-flex;
   font: inherit;
-  height: 42px;
+  height: 44px;
   justify-content: center;
   transition:
-    background-color 350ms ease,
-    border-color 350ms ease,
-    color 350ms ease,
-    opacity 350ms ease,
-    transform 450ms cubic-bezier(0.2, 0.75, 0.25, 1);
-  width: 42px;
+    background-color 250ms ease,
+    border-color 250ms ease,
+    color 250ms ease,
+    transform 300ms ease,
+    opacity 250ms ease;
+  width: 44px;
 }
 
 .carousel-button:not(:disabled):hover {
-  background: var(--accent-gradient);
-  border-color: transparent;
-  color: #fff;
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--bg-color);
   transform: translateY(-2px);
 }
 
@@ -157,6 +176,53 @@
 
 .carousel-button:focus-visible,
 .carousel-viewport:focus-visible {
-  outline: 2px solid var(--gta-pink);
+  outline: 2px solid var(--accent-color);
   outline-offset: 4px;
+}
+
+.projects-section {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.projects-section .section-inner {
+  max-width: none;
+}
+
+.projects-section .section-heading {
+  padding-left: clamp(1.25rem, 7vw, 7rem);
+  padding-right: clamp(1.25rem, 7vw, 7rem);
+}
+
+.projects-section .carousel-viewport {
+  max-width: none;
+  padding-left: clamp(1.25rem, 7vw, 7rem);
+  padding-right: clamp(1.25rem, 7vw, 7rem);
+  scroll-padding-inline: clamp(1.25rem, 7vw, 7rem);
+}
+
+.projects-section .carousel-track {
+  gap: clamp(1.25rem, 7vw, 7rem);
+}
+
+.projects-section .carousel-progress,
+.projects-section .carousel-controls {
+  padding-left: clamp(1.25rem, 7vw, 7rem);
+  padding-right: clamp(1.25rem, 7vw, 7rem);
+}
+
+.projects-section .page-project-link {
+  display: inline-flex;
+  margin: 1.5rem clamp(1.25rem, 7vw, 7rem) 0;
+}
+
+@media (max-width: 760px) {
+  .expertise-card {
+    min-height: 250px;
+    padding: 1.25rem;
+  }
+
+  .expertise-card h3 {
+    margin-top: 3rem;
+  }
 }
